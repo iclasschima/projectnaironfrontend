@@ -10,7 +10,9 @@ class Login extends Component {
       <div>
         {/*Navbar*/}
         <div class="topnav">
-          <a class="active">English</a>
+          <a href="https://www.google.com" class="active">
+            English
+          </a>
           <div class="topnav-right">
             {/* <li>Don't have an account yet?</li> */}
             <a>Don't have an account yet?</a>
@@ -26,7 +28,7 @@ class Login extends Component {
         {/*page icon */}
         <div className="yo">
           <div className="image">
-            <img src={Image} />
+            <img src={Image} alt="not available" />
           </div>
         </div>
         <div className="Gratefull">
