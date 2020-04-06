@@ -15,7 +15,7 @@ class Login extends Component {
           </a>
           <div class="topnav-right">
             {/* <li>Don't have an account yet?</li> */}
-            <a>Don't have an account yet?</a>
+            <a href="/login">Don't have an account yet?</a>
             <a href="/signup">
               <button className="signup">Sign up</button>
             </a>
