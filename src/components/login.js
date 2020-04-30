@@ -1,72 +1,132 @@
-import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import Image from "../../src/LoginFull1.png";
-import "../Login.css";
+import React, { useEffect } from "react";
+// import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import TextField from "@material-ui/core/TextField";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import Link from "@material-ui/core/Link";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+// import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 
-class Login extends Component {
-  // state = {};
-  render() {
-    return (
-      <div>
-        {/*Navbar*/}
-        <div class="topnav">
-          <a href="https://www.google.com" class="active">
-            English
-          </a>
-          <div class="topnav-right">
-            {/* <li>Don't have an account yet?</li> */}
-            <a href="/login">Don't have an account yet?</a>
-            <a href="/signup">
-              <button className="signup">Sign up</button>
-            </a>
-            <a className="wow" href="#about">
-              <u>Need help</u>
-            </a>
-          </div>
-        </div>
-
-        {/*page icon */}
-        <div className="yo">
-          <div className="image">
-            <img src={Image} alt="not available" />
-          </div>
-        </div>
-        <div className="Gratefull">
-          <h1>How who's is this?</h1>
-        </div>
-
-        {/*Login Form*/}
-        <div className="form">
-          <form>
-            <div>
-              <label htmlFor="em">Email address</label>
-              <br></br>
-              <input type="email" id="em" aria-describedby="emailHelp" />
-            </div>
-
-            <div className="girl">
-              <label htmlFor="ps">Password</label>
-              <br></br>
-              <input type="password" id="ps" />
-              <small id="emailHelp" class="form-text text-muted">
-                <a href="#about">
-                  <u>I forgot my password</u>
-                </a>
-              </small>
-            </div>
-          </form>
-          <div className="button">
-            <input type="submit" id="search" value="Login to ProjectNairon" />
-          </div>
-          {/* <div className="cooltext">
-            <h2>
-              <span>or</span>
-            </h2>
-          </div> */}
-        </div>
-      </div>
-    );
-  }
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {"Copyright © "}
+      <Link color="inherit" href="https://material-ui.com/">
+        Your Website
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
 }
 
-export default Login;
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    marginTop: theme.spacing(8),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+    backgroundColor: "#B66FD3",
+  },
+  formBody: {
+    backgroundColor: "white",
+  },
+}));
+
+export default function SignIn() {
+  const classes = useStyles();
+
+  useEffect(() => {
+    document.body.style.backgroundColor = "#B670D3";
+  }, []);
+
+  return (
+    // <Container className={classes.Container} component="main" maxWidth="xl">
+    <Container className={classes.formBody} component="main" maxWidth="xs">
+      <CssBaseline />
+      <div className={classes.paper}>
+        {/* <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar> */}
+        <Typography component="h1" variant="h4">
+          Nairon
+        </Typography>
+        <form className={classes.form} noValidate>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+            autoFocus
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+          />
+          <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Remember me"
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="black"
+            // backgroundColor="#B66FD3"
+            className={classes.submit}
+          >
+            log in
+          </Button>
+          <Grid container direction="column">
+            <Grid item xs>
+              <Link href="#" variant="body2">
+                Forgot password?
+              </Link>
+            </Grid>
+            <Grid item>
+              <Typography component="label" variant="p">
+                New to ProjectNairon?{" "}
+                <Link href="#" variant="body2">
+                  {" "}
+                  {"Sign Up"}
+                </Link>
+              </Typography>
+            </Grid>
+          </Grid>
+        </form>
+      </div>
+      <Box mt={8}>
+        <Copyright />
+      </Box>
+    </Container>
+    // </Container>
+  );
+}
