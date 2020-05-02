@@ -1,38 +1,17 @@
 import React from "react";
-// import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-// import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { withStyles } from "@material-ui/core/styles";
-// import FormControlLabel from "@material-ui/core/FormControlLabel";
-// import { Link } from "react-router-dom";
+
 import { connect } from "react-redux";
-// import IconButton from "@material-ui/core/IconButton";
-// import Input from "@material-ui/core/Input";
-// import FilledInput from "@material-ui/core/FilledInput";
-// import OutlinedInput from "@material-ui/core/OutlinedInput";
-// import InputLabel from "@material-ui/core/InputLabel";
-// import InputAdornment from "@material-ui/core/InputAdornment";
-// import FormHelperText from "@material-ui/core/FormHelperText";
-// import FormControl from "@material-ui/core/FormControl";
-// import TextField from "@material-ui/core/TextField";
-// import Visibility from "@material-ui/icons/Visibility";
-// import VisibilityOff from "@material-ui/icons/VisibilityOff";
-// import {
-//   createMuiTheme,
-//   withStyles,
-//   makeStyles,
-//   ThemeProvider,
-// } from "@material-ui/core/styles";
-// import clsx from "clsx";
+import ReactPhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/material.css";
 
 import { userActions } from "../_actions";
 
@@ -57,35 +36,23 @@ const styles = (theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    // width: "100%",
   },
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    // paddingTop: 120,
     width: "100%", // Fix IE 11 issue.
-    // marginBottom: theme.spacing(5),
     marginTop: theme.spacing(10),
-    // marginLeft: theme.spacing(5),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
     backgroundColor: "#B66FD3",
   },
   formBody: {
-    // paddingBottom: 120,
-    // padding: theme.spacing(10),
     backgroundColor: "white",
     alignself: "center",
     width: "100%",
-  },
-  text: {
-    // paddingTop: 20,
-  },
-  text1: {
-    // paddingTop: 15,
   },
 });
 
@@ -186,52 +153,37 @@ class SignUp extends React.Component {
           <Typography className={classes.text1} component="label" variant="p">
             All your advertising needs met in one place
           </Typography>
-
           <form
             className={classes.form}
             noValidate
             onSubmit={this.handleSubmit}
           >
-            {/* <label</label> */}
-
             <TextField
               variant="outlined"
               email
               margin="normal"
               required
               fullWidth
-              // id="email"
-              label="Email Address"
+              id="emaill"
+              label="clark@kent.com"
               name="email"
               autoComplete="email"
               autoFocus
-              value={this.state.user.email}
+              value={user.email}
               onChange={this.handleChange}
             />
             {submitted && !user.email && (
               <div className="help-block">Email Name is required</div>
             )}
 
-            {/* // /* <FormControlLabel
-            //   label="Secondary"
-            //   // value="top"
-            //   labelPlacement="top"
-            //   control={
-            //     <TextField
-            //       variant="outlined"
-            //       margin="normal"
-            //       required
-            //       fullWidth
-            //       id="email"
-            //       label="Email Address"
-            //       name="email"
-            //       autoComplete="email"
-            //       autoFocus
-            //       value={user.email}
-            //       onChange={this.handleChange}
-            //     />
-            //   }
-            // /> */}
+            <ReactPhoneInput
+              country={"ng"}
+              name="phoneNumber"
+              value={user.phoneNumber}
+              // onChange={(phone) => this.setState({ phoneNumber })}
+              // onChange={this.handleChange}
+              onChange={(event) => (this.state.user.phoneNumber = event)}
+            />
 
             <TextField
               variant="outlined"
@@ -242,42 +194,16 @@ class SignUp extends React.Component {
               label="Password"
               type="password"
               id="password"
-              value={this.state.user.password}
+              value={user.password}
               onChange={this.handleChange}
               autoComplete="current-password"
             />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="phoneNumber"
-              label="Password"
-              type="password"
-              id="password"
-              value={this.state.user.phoneNumber}
-              onChange={this.handleChange}
-              autoComplete="current-password"
-            />
-
-            {/* <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="black"
-              // backgroundColor="#B66FD3"
-              className={classes.submit}
-            >
-              log in
-            </Button> */}
 
             <BootstrapButton
               type="submit"
               variant="contained"
               color="primary"
               fullWidth
-              // disableRipple
-              // className={classes.margin}
             >
               Get started.{" "}
             </BootstrapButton>
