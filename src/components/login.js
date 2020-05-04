@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
   footer: {
     padding: theme.spacing(3, 2),
+    // paddingLeft: theme.spacing(70),
     marginTop: "auto",
     backgroundColor:
       theme.palette.type === "light"
@@ -74,7 +75,7 @@ function SignIn() {
         <Typography variant="body1">Sticky footer placeholder.</Typography>
       </Container>
       <footer className={classes.footer}>
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" style={{}}>
           <Typography variant="body1">
             My sticky footer can be found here.
           </Typography>
