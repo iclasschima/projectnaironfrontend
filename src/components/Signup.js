@@ -2,15 +2,13 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { withStyles } from "@material-ui/core/styles";
 import naironLogo from "../img/NAIRON.png";
 import { Avatar } from "@material-ui/core";
 import DropdownExampleSearchDropdown from "./dropdown";
+import "../Design/SignIn.css";
 
 import { connect } from "react-redux";
 import ReactPhoneInput from "react-phone-input-2";
@@ -23,7 +21,7 @@ const styles = (theme) => ({
   paper: {
     marginTop: theme.spacing(8),
     // marginBottom: theme.spacing(10),
-    paddingBottom: theme.spacing(10),
+    paddingBottom: theme.spacing(6),
     marginRight: theme.spacing(5),
     marginLeft: theme.spacing(5),
     display: "flex",
@@ -66,15 +64,12 @@ const styles = (theme) => ({
     padding: theme.spacing(3, 2),
     marginTop: "auto",
     backgroundColor: "#B66FD3",
-    // backgroundColor: "white",
-    // theme.palette.type === "light"
-    //   ? theme.palette.grey[200]
-    //   : theme.palette.grey[800],
   },
   root: {
     display: "flex",
     flexDirection: "column",
     minHeight: "90vh",
+    // maxHeight: "100",
     alignItems: "center",
     // alignself: "center",
     justifyContent: "center",
@@ -177,7 +172,7 @@ class SignUp extends React.Component {
     console.log(this.state);
     return (
       <React.Fragment>
-        <div className={classes.root}>
+        <div className={classes.root} id="root">
           <div
             style={{
               // display: "flex",
@@ -191,9 +186,10 @@ class SignUp extends React.Component {
           >
             <div
               className={classes.logo}
+              id="logo"
               style={{
                 position: "absolute",
-                paddingLeft: "25%",
+                // paddingLeft: "25%",
                 minHeight: "20vh",
               }}
             >
@@ -315,34 +311,44 @@ class SignUp extends React.Component {
                       <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
                     )}
                   </div>
-                  <Grid container direction="column">
-                    <Grid item xs>
+                  <div style={{}}>
+                    <div
+                      className={classes.inputField}
+                      style={{
+                        width: "110%",
+                      }}
+                    >
+                      {/* <p> By signing up, you agree to ProjectNairon's</p>*/}
                       <Typography
                         component="label"
                         variant="p"
-                        style={{ fontSize: 10 }}
+                        style={{ fontSize: 12 }}
                       >
                         By signing up, you agree to ProjectNairon's
-                        <Link href="#" variant="p">
+                        <a id="link" href="#" variant="p">
                           {" "}
                           Terms of Service and
-                        </Link>
+                        </a>
                       </Typography>
-                    </Grid>
-                    <Grid item>
+                    </div>
+
+                    <div
+                      className={classes.inputField}
+                      style={{ width: "110%" }}
+                    >
                       <Typography
                         component="label"
                         variant="p"
-                        style={{ fontSize: 10 }}
+                        style={{ fontSize: 12 }}
                       >
-                        Already Signed Up?{" "}
-                        <Link href="#" variant="p">
+                        Already signed Up?
+                        <a id="link" href="#" variant="p">
                           {" "}
-                          {"Log in"}
-                        </Link>
+                          Log In
+                        </a>
                       </Typography>
-                    </Grid>
-                  </Grid>
+                    </div>
+                  </div>
                 </form>
               </div>
               {/* <Box mt={8}>
@@ -353,19 +359,23 @@ class SignUp extends React.Component {
         </div>
 
         <footer className={classes.footer}>
-          <Grid container direction="row">
-            <Grid item xs></Grid>
-            <Grid item>
-              <Typography
-                component="label"
-                variant="p"
-                style={{ fontSize: 15, color: "white" }}
-              >
-                Privacy Policy
+          {/* i have figured out a way to fix the responsiveness problem i will adjust 
+        the col span with the size of the screen */}
+          <div className="row">
+            <div className="col-10"></div>
+
+            <div className="col">
+              {/* <h4 style={{ float: "right" }}>Privacy Policy</h4> */}
+              <Typography style={{ float: "right" }}>
+                <a href="#">
+                  <h6 style={{ color: "white" }}>Privacy Policy</h6>
+                </a>
               </Typography>
+            </div>
+            <div className="col">
               <DropdownExampleSearchDropdown></DropdownExampleSearchDropdown>
-            </Grid>
-          </Grid>
+            </div>
+          </div>
         </footer>
       </React.Fragment>
     );
