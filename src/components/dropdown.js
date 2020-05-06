@@ -1,5 +1,6 @@
 import React from "react";
 import { Dropdown } from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
 
 const languageOptions = [
   { key: "Arabic", text: "Arabic", value: "Arabic" },
@@ -34,8 +35,8 @@ const DropdownExampleSearchDropdown = () => (
     icon="world"
     options={languageOptions}
     search
-    text="Select Language"
-    backgroundColor="black"
+    text={languageOptions.key}
+    placeholder="Select a language"
   />
 );
 
