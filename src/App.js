@@ -15,6 +15,8 @@ import { alertActions } from "./_actions";
 import { PrivateRoute } from "./_components";
 import { HomePage } from "./components/Homepage";
 import { connect } from "react-redux";
+import sign from "./components/SignUp2";
+import log from "./components/login2";
 
 class App extends Component {
   // state = {  }
@@ -61,8 +63,8 @@ class App extends Component {
         <Router history={history}>
           <Switch>
             <PrivateRoute exact path="/" component={HomePage} />
-            <Route path="/login" component={SignIn} />
-            <Route path="/signup" component={SignUp} />
+            <Route path="/login" component={log} />
+            <Route path="/signup" component={sign} />
             <Redirect from="*" to="/" />
           </Switch>
         </Router>
