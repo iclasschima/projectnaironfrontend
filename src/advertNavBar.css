@@ -1,0 +1,76 @@
+.advertnav{
+    background: rgb(228, 206, 236);
+    /* opacity: 0.09; */
+    /* background: #B66FD3!important; */
+    /* margin-top: 15px;
+    width: 100%;
+    height: 47.98px; */
+    /* position: absolute; */
+    border-bottom: 0.5px solid #444444;
+    /* opacity: 0.03; */
+}
+
+.vl {
+    
+ border-left: 1px solid #444444;
+  height: 30px;
+  margin-left: 35px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.advertnavtext{
+top: 3.48%;
+bottom: 93.37%;
+z-index: 1;
+font-family: IBM Plex Sans;
+font-style: normal;
+font-weight: 500;
+font-size: 36.474px;
+line-height: 47px;
+margin-left: 25px;
+/* color: red; */
+color: #444444;
+}
+
+.nairontext{
+ top: 3.48%;
+bottom: 93.37%;
+ z-index: 1;
+font-family: Century Gothic;
+font-style: normal;
+font-weight: normal;
+font-size: 32.753px;
+line-height: 40px;
+margin-left: 60px;
+
+}
+
+.advertname{
+    top: 3.48%;
+    bottom: 93.37%;
+    font-family: IBM Plex Sans!important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18.932px;
+    line-height: 25px;
+   color:#2D2D2D!important;
+   /* margin-left: 80px; */
+   
+   }
+
+   .questionicon{
+    top: 3.48%;
+    bottom: 93.37%;
+    margin-right: 50px;
+   }
+
+.icongroup{
+    margin-left: 45%;
+}
+.smileicon{
+    margin-left: 20px;
+}
+.settingicon{
+    margin-right: 10px;
+}
