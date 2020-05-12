@@ -6,9 +6,7 @@ import {
   Redirect,
   Router,
 } from "react-router-dom";
-import SignUp from "./components/Signup";
-// import "./App.css";
-import SignIn from "./components/login";
+
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { history } from "./_helpers";
 import { alertActions } from "./_actions";
