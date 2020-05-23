@@ -1,0 +1,73 @@
+.yo {
+  padding-left: 45%;
+  padding-top: 50px;
+}
+
+.Gratefull {
+  padding-left: 40%;
+}
+
+.form {
+  padding-left: 35%;
+  padding-right: 35%;
+}
+
+#search {
+  width: 35em;
+  height: 3em;
+  color: aliceblue;
+  background-color: #4caf50;
+}
+
+.button {
+  padding-top: 10%;
+}
+
+#em {
+  width: 35em;
+  height: 3em;
+  border-style: outset;
+  border-color: black;
+}
+
+#ps {
+  width: 35em;
+  height: 3em;
+  border-style: outset;
+  border-color: black;
+}
+
+.girl {
+  padding-top: 5%;
+}
+
+.topnav a {
+  float: left;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav .signup {
+  background-color: #4caf50;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+
+h2 span {
+  background: #fff;
+  padding: 0 10px;
+}
