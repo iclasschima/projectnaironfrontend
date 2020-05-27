@@ -3,25 +3,56 @@ import TopnavStyle from "../styles/topnav"
 
 import {Navbar} from "react-bootstrap"
 
-import {IoMdRefresh} from "react-icons/io"
-import {AiTwotoneSetting} from "react-icons/ai"
 import {MdNotifications} from "react-icons/md"
-import {FaSmile} from "react-icons/fa"
+import {FaUserCircle} from "react-icons/fa"
+import {FiMenu} from "react-icons/fi"
+
+import {Dropdown} from "semantic-ui-react"
 
 
-const TopNavbar = () => {
+const TopNavbar = ({sideNav, showSideNav}) => {
+    const PATH = window.location.pathname
+
+    let header
+
+    switch (PATH) {
+        case "/dashboard":
+            header = "Dashboard"
+            break;
+        case "/manage_ads":
+            header = "Manage Ads"
+            break;
+        case "/medicals":
+            header = "Medicals"
+            break;
+        case "/account":
+            header = "Account"
+            break;
+        case "/market":
+            header = "Market"
+            break;
+        case "/help":
+            header = "Help"
+            break;
+    
+        default:
+            break;
+    }
+
     return (
         <TopnavStyle>
             <Navbar id="topnav" fixed="top">
-                <Navbar.Brand>Bal. <span>N546,980.00</span></Navbar.Brand>
-
-                <span id="date">02 April, 2020</span>
+                <Navbar.Brand><FiMenu className="d-block d-md-none" onClick={() => showSideNav(!sideNav)}/> {header}</Navbar.Brand>
             
             <div id="nav_item" className="ml-auto">
-               <a href="/dashboard" id="referesh"> <IoMdRefresh /></a>
-               <a href="/dashboard"> <AiTwotoneSetting /></a>
                <a href="/dashboard"> <MdNotifications /></a>
-               <a href="/dashboard" id="smiley_face"> <FaSmile /> <span>Michael Joshua</span></a>
+               <span> <FaUserCircle /> 
+                    <Dropdown text="Michael Junior">
+                    <Dropdown.Menu>
+                    <Dropdown.Item text='Log Out' onClick={() => window.location.pathname = "/"} />
+                    </Dropdown.Menu>
+                </Dropdown>
+               </span>
             </div>
            
         </Navbar>

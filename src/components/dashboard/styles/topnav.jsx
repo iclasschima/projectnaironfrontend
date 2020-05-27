@@ -3,56 +3,77 @@ import styled from "styled-components"
 export default styled.div`
 
     #topnav {
-        border-bottom: 0.5px solid #2D2D2D;
-        margin-left: 17%;
-        padding: 0.6rem 4rem;
-
+        background-color: #fff;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
+        z-index: 1;
+        
         .navbar-brand {
-            font-size: 16px;
-            color: #34A853;
-            span {
-                font-weight: bold !important;
-                margin-left: 7px
-            }
-        }
+            font-size: 13px;
+            padding-left: 2.5rem;
+            font-weight: 500;
 
-        #date {
-            position: absolute;
-            left: 55%;
-            color: #2D2D2D;
-            font-weight: 600;
+            svg {
+                position: absolute;
+                left: 4%;
+                font-size: 1.6rem;
+                top: 20%;
+                color: ${props => props.theme.secondaryColor};
+            }
         }
 
         #nav_item {
-            #referesh {
-                background-color: ${props => props.theme.primaryColor};
-                padding: 0px 5px 1.5px;
-                border-radius: 50%;
-                color: #fff;
-                margin-right: 3rem;
-                height: 6rem !important;
-                svg {
-                    font-size: 15px;
+                a {
+                    color: ${props => props.theme.secondaryColor};
+                    font-size: 18px;
+                    margin-right: 1rem;
+                    
+                    &:hover {
+                        text-decoration: none
+                    }
+                }
+                span {
+                    svg {
+                        margin-right: 9px
+                    }
+                    .text {
+                        font-size: 13px !important
+                    }
                 }
             }
-            a {
-                color: ${props => props.theme.secondaryColor};
-                font-size: 18px;
-                margin-right: 1rem;
-                &:hover {
-                    text-decoration: none
+
+
+        @media screen and (min-width: 768px) {
+            margin-left: 16rem;
+            padding: 0.6rem 3rem;
+            .navbar-brand {
+                padding-left: 0;
+                span {
+                    margin-left: 7px
                 }
-                &#smiley_face {
-                    color: ${props => props.theme.primaryColor};
+            }
+
+            #nav_item {
+                a {
+                    color: ${props => props.theme.secondaryColor};
+                    font-size: 18px;
+                    margin-right: 1rem;
                     span {
-                        color: ${props => props.theme.secondaryColor};
-                        font-size: 15px;
-                        margin-left: 0.4rem;
-                        font-weight: 300 !important
+                        display: inline !important
+                    }
+                    &:hover {
+                        text-decoration: none
+                    }
+                    &#smiley_face {
+                        color: ${props => props.theme.primaryColor};
+                        span {
+                            color: ${props => props.theme.secondaryColor};
+                            font-size: 15px;
+                            margin-left: 0.4rem;
+                            font-weight: 300 !important
+                        }
                     }
                 }
             }
         }
     }
-
 `

@@ -1,54 +1,30 @@
 import styled from "styled-components"
 
 export default styled.div`
-    font-family: 'IBM Plex Sans', sans-serif;
-    position: fixed;
-    background-color: #2D2D2D;
-    min-height: 100%;
-    width: 17%;
-    transition: ease-in .3s;
-    z-index: 2;
-    padding: 0;
     font-size: ${props => props.theme.mdFontSize};
+    font-family: 'Fira Sans', sans-serif;
+    position: fixed;
+    background-color: #3C154B;
+    min-height: 100%;
+    width: 16rem;
+    transition: ease-in .3s;
+    padding: 0;
+    letter-spacing: 0.5px; 
+    
+
+    @media screen and (max-width: 768px) {
+        z-index: 2000;
+        margin-left: ${props => props.show ? "" : "-250px"};
+    }
 
     #top_header {
-        padding: 0.7rem 0.5rem 0.3rem;
+        padding: 0.56rem;
         text-align: center;
-        p {
-            font-size: 1.8rem;
+        background-color: #5E2D70; 
+        span {
             color: #fff;
-            font-weight: 300
+            font-size: 20px;
         }
-    }
-
-    hr {
-        width: 75%;
-        border: 0.5px solid #FFFFFF;
-        margin: 0 auto;
-    }
-
-    #button_div {
-        padding: 1rem;
-        text-align: center;
-        a {
-            position: relative;
-            background: ${props => props.theme.primaryColor};
-            border: 0;
-            width: 13rem;
-            padding: 10px;
-            color: #fff;
-            border-radius: 1px;
-            font-size: 15px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            svg {
-                position: absolute;
-                left: 13%;
-                font-size: 1.5rem
-            }
-            &:hover {
-                background-color: #bb86d1;
-            }
-        } 
     }
 
     ul {
@@ -61,36 +37,48 @@ export default styled.div`
                 padding: 0.9rem;
                 padding-left: 2rem;
                 display: block;
-                color: #ABABAB;
-                border-left: 2px solid #2D2D2D;
+                color: #fff;
+                opacity: 0.65;
+                border-left: 2px solid #2D2D2D;     
+                font-weight: 500;
                 svg {
                     margin-right: 6%;
-                    font-size: 1.3rem;
+                    font-size: 1rem;
                     &#all_campaigns_icon {
-                        font-size: 22px;
+                        font-size: 1.2rem;
                         margin-left: -2px !important;
                     }
-                }&:hover {
-                    text-decoration: none;
-                    background-color: #424242;
-                    border-left: 2px solid #fff;
+                }&.active {
+                    background-color: #5E2D70;
+                    border-left: 2px solid #fff !important;
                     color: #fff;
-                    transition: ease all .6s
+                    opacity: 1;
                 }
+                &:hover {
+                    border-left: 2px solid #5E2D70;
+                    text-decoration: none;
+                    transition: ease all .6s;
+                    background-color: #5E2D70;
+                }
+                
             }
+        }
+        hr {
+            width: 75%;
+            border: 0.5px solid #FFFFFF;
+            margin: 9px auto;
         }
     }
 
     #status_div {
-        padding: 2rem;
+        padding: 0 2rem;
         h6 {
             color: #ABABAB;
             font-weight: 400;
+            font-size: 13px;
         }
         p {
             color: #fff;
-            /* border: 1px solid #ABABAB; */
-            /* text-align: center; */
             padding-left: 1rem;
             position: relative;
             font-size: 12px;

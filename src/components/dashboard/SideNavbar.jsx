@@ -1,30 +1,26 @@
 import React from "react";
 import SidenavStyle from "./styles/sidenav"
 
-import {BsPlus, BsDot} from "react-icons/bs"
+import {Link} from "react-router-dom"
+
+import { BsDot, BsTools} from "react-icons/bs"
 import {MdDashboard, MdFolder} from "react-icons/md"
-import {AiTwotoneSetting, AiFillNotification} from "react-icons/ai"
+import {AiTwotoneSetting, AiFillNotification, AiFillCloseCircle} from "react-icons/ai"
 import {FaWallet, FaHandshake} from "react-icons/fa"
 import {IoMdHelpCircle}  from "react-icons/io"
 
 
-const SideNavbar = () => {
+const SideNavbar = ({sideNav, showSideNav}) => {
+
     return (
-        <SidenavStyle>
+        <SidenavStyle show={sideNav}>
 
             <div id="top_header">
-               <p>nairon</p>
+                <span>nairon</span>
+                
             </div>
 
-            <hr/>
-
-            <div id="button_div">
-                <a href="/dashboard" className="btn"><BsPlus /> New Advert</a>
-            </div>
-
-            <hr/>
-
-            <Ul />
+            <Ul sideNav={sideNav} showSideNav={showSideNav}/>
 
             <hr />
 
@@ -37,30 +33,86 @@ const SideNavbar = () => {
     )
 }
 
-const Ul = () => (
-    <ul>
-        <li>
-            <a href="/dashboard"> <MdDashboard /> Dashboard</a>
-        </li>
-        <li>
-            <a href="/dashboard"><AiFillNotification /> Create Ads</a>
-        </li>
-        <li>
-            <a href="/dashboard"><AiTwotoneSetting /> Manage Ads</a>
-        </li>
-        <li>
-            <a href="/dashboard"><FaWallet /> Fund Wallet</a>
-        </li>
-        <li>
-            <a href="/dashboard"><MdFolder id="all_campaigns_icon"/> All Campaigns</a>
-        </li>
-        <li>
-            <a href="/dashboard"><FaHandshake /> Transaction</a>
-        </li>
-        <li>
-            <a href="/dashboard"><IoMdHelpCircle /> Help</a>
-        </li>
-    </ul>
-)
+const Ul = ({sideNav, showSideNav}) => {
+
+    const PATH = window.location.pathname
+    console.log(PATH)
+
+    return (
+        <ul>
+            <li>
+                <Link 
+                    to="/dashboard" 
+                    className={PATH === "/dashboard" ? "active" : ""}> 
+                    <MdDashboard /> Dashboard
+                </Link>
+            </li>
+            <li>
+                <Link 
+                    to="/create_ads" 
+                    className={PATH === "/create_ads" ? "active" : ""}>
+                    <AiFillNotification /> Create Ads
+                </Link>
+            </li>
+            <li>
+                <Link 
+                    to="/manage_ads" 
+                    className={PATH === "/manage_ads" ? "active" : ""}>
+                    <AiTwotoneSetting /> Manage Ads
+                </Link>
+            </li>
+            <li>
+                <Link 
+                    to="/fund_wallet" 
+                    className={PATH === "/fund_wallet" ? "active" : ""}>
+                    <FaWallet /> Fund Wallet
+                </Link>
+            </li>
+            <li>
+                <Link 
+                    to="/all_campaigns"
+                    className={PATH === "/all_campaigns" ? "active" : ""}>
+                    <MdFolder id="all_campaigns_icon"/> All Campaigns
+                </Link>
+            </li>
+            <li>
+                <Link 
+                    to="/transactions" 
+                    className={PATH === "/transactions" ? "active" : ""}>
+                    <FaHandshake /> Transactions
+                </Link>
+            </li>
+            <li>
+                <Link 
+                    to="/help" 
+                    className={PATH === "/help" ? "active" : ""}>
+                    <IoMdHelpCircle /> Help
+                </Link>
+            </li>
+            <li>
+                <Link 
+                    to={PATH}
+                    onClick={() => showSideNav(!sideNav)}
+                    className="d-block d-md-none">
+                    <AiFillCloseCircle /> Close
+                </Link>
+            </li>
+
+            <hr />
+
+            <li>
+                <Link 
+                    to="/settings" 
+                    className={PATH === "/help" ? "active" : ""}>
+                    <BsTools /> Settings
+                </Link>
+            </li>
+
+            <hr />
+        </ul>
+    )
+}
+
+
 
 export default SideNavbar;
