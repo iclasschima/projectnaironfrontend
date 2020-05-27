@@ -20,7 +20,6 @@ const TopBar = () => {
                             fluid
                         />
                     }
-                    header='Campaign Search'
                     content='You may search by campaign name'
                     on='focus'
                     size='tiny'
