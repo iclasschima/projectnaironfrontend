@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Dashboard from "./components/Dashboard"
 import {
+  // BrowserRouter,
   Switch,
   Route,
-  Redirect,
-  Router,
   BrowserRouter
 } from "react-router-dom";
+
+import Dashboard from "./components/Dashboard"
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { history } from "./_helpers";
