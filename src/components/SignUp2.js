@@ -120,6 +120,10 @@ class SignUp extends React.Component {
     });
   }
 
+  phoneHandleChange = (e) => {
+    this.state.user.phoneNumber = e;
+  };
+
   handleSubmit(event) {
     event.preventDefault();
 
@@ -219,9 +223,10 @@ class SignUp extends React.Component {
                             value={user.phoneNumber}
                             containerStyle={{ height: 55 }}
                             inputStyle={{ width: "100%", height: "100%" }}
-                            onChange={(event) =>
-                              (this.state.user.phoneNumber = event)
-                            }
+                            // onChange={(event) =>
+                            //   (this.state.user.phoneNumber = event)
+                            // }
+                            onChange={this.phoneHandleChange}
                           />
                           {submitted && !user.phoneNumber && (
                             <div

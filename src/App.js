@@ -3,13 +3,12 @@ import {
   // BrowserRouter,
   Switch,
   Route,
-  Redirect,
-  Router,
+  BrowserRouter
 } from "react-router-dom";
-import SignUp from "./components/Signup";
-// import "./App.css";
+
+import Dashboard from "./components/Dashboard"
+
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import AdvertNavBar from "./components/AdvertNavBar";
 import Advert from "./components/advertForm/Advert";
 import AdvertForm11 from "./components/advertForm/AdvertForm11";
 
@@ -43,37 +42,25 @@ class App extends Component {
   render() {
     const { alert } = this.props;
     return (
-  
-      <div style={{}}>
-        {alert.message && (
-          <div className={`alert ${alert.type}`}>{alert.message}</div>
-        )}
-        <Router history={history}>
-          <Switch>
+      <BrowserRouter>
+          <div>
+            {alert.message && (
+              <div className={`alert ${alert.type}`}>{alert.message}</div>
+            )}
 
-           
-            <Route exact path={"/signup"} component={SignUp} />
-            <Route exact path={"/advertnav"} component={AdvertNavBar} />
-            <Route exact path={"/advertForm"} component={Advert} />
-            <Route exact path={"/ad"} component={AdvertForm11} />
-
-            {/* <Route exact path={"/advert"} component={AdvertBody} />
-            <Route exact path={"/advert1"} component={AdvertBody1} />
-            <Route exact path={"/advert2"} component={AdvertBody3} />
-            <Route exact path={"/advert3"} component={AdvertBody4} />
-            <Route exact path={"/advert4"} component={AdvertBody5} /> */}
-
-
-
-
-            <PrivateRoute exact path="/" component={HomePage} />
-            <Route path="/login" component={log} />
-            <Route path="/signup" component={sign} />
-            <Redirect from="*" to="/" />
-
-          </Switch>
-        </Router>
-      </div>
+              <Switch>
+                <PrivateRoute exact path="/" component={HomePage} />
+                <Route path="/login" component={log} />
+                <Route path="/signup" component={sign} />
+                <Route path="/dashboard" component={Dashboard} />
+                <Route path="/manage_ads" component={Dashboard} />
+                <Route exact path={"/advertForm"} component={Advert} />
+                <Route exact path={"/ad"} component={AdvertForm11} />
+                <Route component={Dashboard} />
+              </Switch>
+            {/* </Router> */}
+          </div>
+      </BrowserRouter>
     );
   }
 }
