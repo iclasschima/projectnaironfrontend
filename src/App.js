@@ -3,9 +3,10 @@ import {
   // BrowserRouter,
   Switch,
   Route,
-  Redirect,
-  Router,
+  BrowserRouter
 } from "react-router-dom";
+
+import Dashboard from "./components/Dashboard"
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { history } from "./_helpers";
@@ -30,43 +31,23 @@ class App extends Component {
   render() {
     const { alert } = this.props;
     return (
-      // <div
-      //   className="container"
-      //   style={{
-      //     justifyContent: "center",
-      //     backgroundColor: "black",
-      //     // position: "absolute",
-      //     // width: "100%",
-      //     // left: 0,
-      //     // right: 0,
-      //   }}
-      // >
-      //   {alert.message && (
-      //     <div className={`alert ${alert.type}`}>{alert.message}</div>
-      //   )}
-      //   <Router history={history}>
-      //     <Switch>
-      //       <PrivateRoute exact path="/" component={HomePage} />
-      //       <Route path="/login" component={SignIn} />
-      //       <Route path="/signup" component={SignUp} />
-      //       <Redirect from="*" to="/" />
-      //     </Switch>
-      //   </Router>
-      // </div>
+      <BrowserRouter>
+          <div>
+            {alert.message && (
+              <div className={`alert ${alert.type}`}>{alert.message}</div>
+            )}
 
-      <div style={{}}>
-        {alert.message && (
-          <div className={`alert ${alert.type}`}>{alert.message}</div>
-        )}
-        <Router history={history}>
-          <Switch>
-            <PrivateRoute exact path="/" component={HomePage} />
-            <Route path="/login" component={log} />
-            <Route path="/signup" component={sign} />
-            <Redirect from="*" to="/" />
-          </Switch>
-        </Router>
-      </div>
+              <Switch>
+                <PrivateRoute exact path="/" component={HomePage} />
+                <Route path="/login" component={log} />
+                <Route path="/signup" component={sign} />
+                <Route path="/dashboard" component={Dashboard} />
+                <Route path="/manage_ads" component={Dashboard} />
+                <Route component={Dashboard} />
+              </Switch>
+            {/* </Router> */}
+          </div>
+      </BrowserRouter>
     );
   }
 }
