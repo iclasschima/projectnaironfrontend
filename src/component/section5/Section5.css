@@ -1,7 +1,24 @@
+.section-header .section-title {
+    font-size: 32px;
+    color: #111;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  
+  .section-header .section-description {
+    text-align: center;
+    padding-bottom: 40px;
+    color: #999;
+  }
+  
+
 .services {
-    background: #fff;
+    /* background: #fff; */
     background-size: cover;
     padding: 80px 0 60px 0;
+    background: rgba(54, 43, 053, 0.5)
 }
 
 .services .box {
@@ -28,7 +45,7 @@
     text-align: center;
     width: 72px;
     height: 72px;
-    background: #2dc997;
+    background: #ffd;
 }
 
 .services .icon a {
@@ -51,21 +68,6 @@
 
 .services .box:hover .icon a {
     color: #2dc997;
-}
-
-.section-header .section-title {
-    font-size: 32px;
-    color: #111;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.section-header .section-description {
-    text-align: center;
-    padding-bottom: 40px;
-    color: #999;
 }
 
 .services .title {

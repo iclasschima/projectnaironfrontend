@@ -1,4 +1,8 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom'
+
+
 import './Header.css'
 
 
@@ -7,33 +11,33 @@ function Header() {
            {/* <header className="header"> */}
     <div class="container">
 
-      <div className="logo" className="pull-left">
+      <div id="logo" className="pull-left">
         <h1><a href="#hero">Nairon</a></h1>
       </div>
 
       <nav className="nav-menu-container">
         <ul className="nav-menu">
           <li><a href="#portfolio">Login</a></li>
-          <li><Button variant="outline-info">Create account</Button>{' '}</li>
+          <li><button variant="outline-info">Create account</button>{' '}</li>
 
-          <li className="menu-has-children"><a href=""> 
-           <Button variant="outline-primary">English</Button>{' '}
-            </a>
+          <li className="menu-has-children"><Link to=""> 
+           <button variant="outline-primary">English</button>{' '}
+            </Link>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li className="menu-has-children"><a href="#">Locals</a>
+              <li><Link to="#">Drop Down 1</Link></li>
+              <li className="menu-has-children"><Link to="#">Locals</Link>
                 <ul>
-                  <li><a href="#">Yoruba</a></li>
-                  <li><a href="#">Igbo</a></li>
-                  <li><a href="#">Hausa</a></li>
+                  <li><Link to="#">Yoruba</Link></li>
+                  <li><Link to="#">Igbo</Link></li>
+                  <li><Link to="#">Hausa</Link></li>
                 </ul>
               </li>
-              <li><a href="#">French</a></li>
-              <li><a href="#">German</a></li>
-              <li><a href="#">Dutch</a></li>
+              <li><Link to="#">French</Link></li>
+              <li><Link to="#">German</Link></li>
+              <li><Link to="#">Dutch</Link></li>
             </ul>
           </li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><Link to="#contact">Contact Us</Link></li>
         </ul>
       </nav>
     </div>
