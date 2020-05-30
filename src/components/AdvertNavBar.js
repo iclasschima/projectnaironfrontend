@@ -11,42 +11,54 @@ class AdvertNavBar extends Component{
     render(){
       return(
     
-        <div className="row-lg-12">
-            
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div className=" nairontext navbar-brand d-flex">
-                    <h4>nairon</h4>
-                    <div className="vl"></div>
-                </div>
-            
-                <div className="navbar-brand advertnavtext">
-                    <h4>New Advert</h4>
-                </div>
-                
+        
+            <div>
+            <nav className="navbar navbar-expand-sm navbar-light bg-light ">
+                        <div className="col">
+                            <h4 className=" navbar-brand nairontext">nairon</h4>
+                            <button className=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                <span className="navbar-toggler-icon"></span>
+                            </button>
+                       </div>    
+                            <div className="  collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul className="navbar-nav ">
+                                    <div className="vl"></div>
+                                    <li className="nav-item">
+                                        
+                                        <a className=" nav-link" href="/"><h4 className="advertnavtext">New Advert</h4></a>
+                                    </li>
 
-                <div className="navbar-brand d-flex icongroup">
-                        <div className="questionicon">
-                            <img alt="question" src={question}/>
-                            
-                        </div>
-                        
-                        <div className="settingicon">
-                            <img alt="setting" src={setting}/>
-                        </div>
-                        <div className="">
-                            <img alt="notification" src={notification}/>
-                        </div>
-                        <div className="smileicon">
-                            <img alt="smile" src={smile}/>
-                        </div>
-                    
-                </div>
-                <div className="navbar-brand advertname">
-                <h5 className="dropdown-toggle ">Micheal Joshua</h5>
+                                    {/* <div className=" d-flex icongroup"> */}
+                                   <li className="nav-item"> 
+                                        <a className=" nav-link" href="/"><img className="questionicon" alt="question" src={question}/></a>
+                                    </li>
+                                    <li className="nav-item">         
+                                        <a className=" nav-link" href="/"> <img className="settingicon" alt="setting" src={setting}/></a>     
+                                    </li>
+                                    <li className="nav-item">      
+                                        <a className=" nav-link" href="/"><img className="settingicon" alt="notification" src={notification}/></a>
+                                    </li> 
+                                    <li className="nav-item">
+                                        <a className=" nav-link" href="/"><img  className="smileicon" alt="smile" src={smile}/></a>
+                                     </li>      
+                                    {/* </div> */}
+                                    <li className="nav-item">
+                                    
+                                        <h5 className="dropdown-toggle  advertname" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Micheal Joshua</h5>
+                                        <div className="  dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a className="dropdown-item" href="/">Action</a>
+                                            <a className="dropdown-item" href="/">Another action</a>
+                                            <a className="dropdown-item" href="/">Something else here</a>
+                                         </div>
+                                    </li>
+                </ul>
             </div>
+            
 
             </nav>
-        </div>
+            {/* <hr className="navUnderline"></hr> */}
+            </div>
+        
     
         );
 

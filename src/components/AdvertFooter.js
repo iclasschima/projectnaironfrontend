@@ -7,11 +7,11 @@ class AdvertFooter extends Component{
         return(
             <div className="row">
 
-                <div className="col-md-12">
+                <div className="col">
                     <div className="card advertfooter">
 
                         <div className="card-body advertcardcontent">
-                            <p className="card-text">Change if lagos is not your location</p>
+                            <p className="card-text">Change if <a href="/" className="lagRec dropdown-toggle loc">lagos</a> is not your location</p>
 
                         </div>
 

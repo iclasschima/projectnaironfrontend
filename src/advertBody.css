@@ -4,8 +4,15 @@
     /* width: 50rem; */
     /* opacity: 0.9; */
     background: #F5F9FC;
+    /* border: 1px solid #444444; */
+    /* width: 80%; */
 /* opacity: 0.07; */
 }
+.advertcardpicture{
+    background: white;
+}
+
+
 
 .advertcard{
     /* background-color: red; */
@@ -35,8 +42,10 @@ font-style: normal;
 font-weight: normal;
 font-size: 20px;
 line-height: 25px;
+margin-top: 60px!important;
+margin-bottom: 25px!important;
 /* identical to box height */
-
+clear: both;
 
 color: #2D2D2D;
 
@@ -58,13 +67,14 @@ line-height: 20px;
 }
 .fillform{
     
-        margin-top: 15px;
-        margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 5%;
         /* border: 0; */
-        width: 28%;
-        border: 1px solid #444444;
-        position: absolute;
-        opacity: 0.8;
+     width: 30%;
+    border: none !important;
+    background: transparent !important;
+    border-bottom: 1px solid#444444 !important;
+    outline: none;
 
       
 }
@@ -74,18 +84,32 @@ font-style: normal;
 font-weight: normal;
 font-size: 15.9px;
 line-height: 20px;
-margin-top: 50px;
+/* margin-top: 40px; */
 /* identical to box height */
 /* opacity: 0!important; */
 
 color: #2D2D2D;
 
 }
+
+.question2{
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15.9px;
+    line-height: 20px;
+    /* margin-top: 40px!important; */
+    /* identical to box height */
+    /* opacity: 0!important; */
+    
+    color: #2D2D2D;
+    
+    }
 .startbtn{
-    margin-top: 100px;
+    margin-top: 70px;
     background: #2D2D2D;
     color: white;
-    margin-bottom: 50px;
+    margin-bottom: 5% !important;
     border: 3px solid #B66FD3;
     font-family: IBM Plex Sans;
     font-style: normal;
@@ -94,14 +118,293 @@ color: #2D2D2D;
     line-height: 25px;
     /* width: 10%; */
     outline: none;
+    float: none!important;
+}.press{
+    margin-top: 13px;
+    margin-left: 15px;
+}
+.want{
+    margin-top: 17px!important;
+    margin-right: 5px!important;
+
+}
+.ageSpace{
+    margin-bottom: 20%!important;
 }
 .advertfooter{
     border: none!important;
     /* width: 50rem; */
     /* margin-top: 40px; */
     margin-left: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     margin-right: 30px;
     height: 55px;
 
+}
+.lagRec {
+    height: 30px;
+    width: 55px;
+    /* background-color: #555; */
+    color: #6FA8D3;
+
+    border: 2px solid #6FA8D3;
+
+  }
+  .ageRec{
+    height: 25px;
+    width: 45px;
+    margin-right: 15px;
+    
+    /* background-color: #555; */
+    /* color: #6FA8D3; */
+
+    border:  2px solid #2D2D2D;
+  }
+  .ageGroup{
+      /* display: inline; */
+      float: left;
+      margin-right: 6px!important;
+  }
+  .ageText{
+      margin-left: 5px;
+  }
+  .loc{
+      padding-left: 7px;
+      padding-right: 7px;
+  }
+  .ageDash{
+      width: 10%;
+      order: 2px solid#000000!important;
+  }
+  .startfloat{
+    float: none!important;
+    clear: both;
+
+  }
+  .questionSlide{
+    width: 15%;
+    left: 55%;
+    position: relative;
+    margin-top: 30px;
+    height: 5px;
+    float: left;
+    display: flex;
+   
+  }
+  .questionPro{
+    background: #2D2D2D;
+  }
+  .arr{
+    height: 30px;
+    width: 40px;
+    margin-right: 2px;
+    
+    background-color: #2D2D2D;
+    /* color: #6FA8D3; */
+    display: block;
+    float: left;
+    position: relative;
+    left: 57%;
+    margin-top: 10px;
+    color: white;
+
+    border:  2px solid #B66FD3;
+  }
+  .complete{
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.181px;
+    line-height: 15px;
+    /* identical to box height */
+    
+    
+    color: #2D2D2D;
+    margin-top: 45px;
+    
+    opacity: 0.8;
+      margin-left: 50%;
+  }
+  .arrnav{
+      margin-top: 5px;
+      padding-left: 7px;
+      padding-right: 5px;
+  }
+  .input-group-text{
+      background: transparent!important;
+      background-color:  #F5F9FC!important;
+      /* border: none!important; */
+      outline: none!important;
+      border-right: 0px;
+      border: 1px solid #2D2D2D;
+      margin-bottom: 2px!important;
+  }
+  .locfield{
+      /* width: 50%; */
+      background: #F5F9FC;
+      border-left: none!important;
+      border: 1px solid #2D2D2D;
+  }
+
+  .fillformlong{
+    
+    /* margin-top: 15px; */
+    /* margin-bottom: 30px; */
+    /* border: 0; */
+    width: 50%;
+ border: none !important;
+background: transparent !important;
+border-bottom: 1px solid#444444 !important;
+outline: none;
+margin-top: 15px;
+margin-bottom: 20px;
+  
+}
+/* @media (min-width: @screen-sm-min){
+    width: 100%;
+} */
+@media (max-width: 768px) {
+     .carousel .picRec {
+        width: 100% !important;
+        overflow: hidden!important;
+        
+        clear: both;
+    }
+}
+.radioRec{
+    height: 53px;
+    width: 320px;
+    margin-bottom: 10px;
+    border:  2px solid #2D2D2D;
+  }
+  .picRec{
+    height: 193px;
+    width: 250px;
+    margin-bottom: 10px;
+    border: 1px solid #444444;
+    margin-right: 7px !important;
+  }
+  .carousel{
+      margin-top: 40px;
+      margin-left: 45px;
+  }
+  /* .ageRec{
+    height: 23px;
+    width: 100px;
+    margin-bottom: 10px;
+    border:  2px solid #2D2D2D;
+  } */
+
+  
+  #auto{
+      margin-right: 30px;
+      margin-top: 10px;
+      margin-left: 25px;
+      margin-bottom: 18px;
+    
+  }
+  .manual{
+    
+    margin-bottom: 70px!important;
+  
+}
+  .autoText{
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 32px;
+    /* margin-top: 5px; */
+    margin-right: 20px;
+    margin-bottom: 10px;
+    /* identical to box height */
+    
+    
+    color: #2D2D2D;
+  }
+
+  
+.recommend{
+font-family: IBM Plex Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 8px;
+line-height: 10px;
+margin-left: 80px;
+color: #B66FD3;
+padding-bottom: 0px!important;
+}
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #F5F9FC;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid black;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: black;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid  #B66FD3;
+}
+
+.MuiFormControl-root {
+    width: 230px;
+}
+
+.MuiFilledInput-root{
+    background-color:#F5F9FC !important;
+    border: 0.5px solid #7C7C7C;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    height: 40px !important;
+
+}
+
+.ageHeight{
+    width:  90%!important;
+    height: 10px!important;
+    margin-right: 10px!important;
+}
+
+.MuiFilledInput-underline:hover:before {
+    border-bottom: 0px solid rgba(0, 0, 0, 0.87);
+}
+
+.MuiFilledInput-underline:after  {
+    color: #000;
+
+    border-bottom: 0px solid rgba(0, 0, 0, 0.87) !important;
+}
+
+.MuiFilledInput-underline:before  {
+    color: #000;
+
+    border-bottom: 0px solid rgba(0, 0, 0, 0.87) !important;
+}
+
+.MuiInputLabel-filled {
+    z-index: 1;
+    transform: translate(14px, 12px) scale(1)!important;
+    pointer-events: none;
+}
+
+
+.MuiFormLabel-root {
+    color: #000000;
 }

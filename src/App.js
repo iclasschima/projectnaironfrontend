@@ -10,7 +10,16 @@ import SignUp from "./components/Signup";
 // import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import AdvertNavBar from "./components/AdvertNavBar";
-import AdvertBody from "./components/AdvertBody";
+import Advert from "./components/advertForm/Advert";
+import AdvertForm11 from "./components/advertForm/AdvertForm11";
+
+
+// import AdvertBody from "./components/advertForm/AdvertBody";
+// import AdvertBody1 from "./components/advertForm/AdvertBody1";
+// import AdvertBody2 from "./components/advertForm/AdvertBody2";
+// import AdvertBody3 from "./components/advertForm/AdvertBody3";
+// import AdvertBody4 from "./components/advertForm/AdvertBody4";
+// import AdvertBody5 from "./components/advertForm/AdvertBody5";
 import { history } from "./_helpers";
 import { alertActions } from "./_actions";
 import { PrivateRoute } from "./_components";
@@ -45,7 +54,16 @@ class App extends Component {
            
             <Route exact path={"/signup"} component={SignUp} />
             <Route exact path={"/advertnav"} component={AdvertNavBar} />
-            <Route exact path={"/advert"} component={AdvertBody} />
+            <Route exact path={"/advertForm"} component={Advert} />
+            <Route exact path={"/ad"} component={AdvertForm11} />
+
+            {/* <Route exact path={"/advert"} component={AdvertBody} />
+            <Route exact path={"/advert1"} component={AdvertBody1} />
+            <Route exact path={"/advert2"} component={AdvertBody3} />
+            <Route exact path={"/advert3"} component={AdvertBody4} />
+            <Route exact path={"/advert4"} component={AdvertBody5} /> */}
+
+
 
 
             <PrivateRoute exact path="/" component={HomePage} />

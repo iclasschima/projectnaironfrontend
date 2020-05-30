@@ -15,62 +15,83 @@
  border-left: 1px solid #444444;
   height: 30px;
   margin-left: 35px;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-bottom: 5px;
 }
 
 .advertnavtext{
-top: 3.48%;
-bottom: 93.37%;
+/* top: 3.48%;
+bottom: 94.37%; */
 z-index: 1;
 font-family: IBM Plex Sans;
 font-style: normal;
 font-weight: 500;
-font-size: 36.474px;
+font-size: 33.474px;
 line-height: 47px;
 margin-left: 25px;
 /* color: red; */
 color: #444444;
+margin-bottom: 13.5px!important;
 }
 
 .nairontext{
- top: 3.48%;
+ /* top: 3.48%;
 bottom: 93.37%;
- z-index: 1;
+ z-index: 1; */
 font-family: Century Gothic;
 font-style: normal;
 font-weight: normal;
 font-size: 32.753px;
 line-height: 40px;
-margin-left: 60px;
+/* margin-left: 60px; */
 
 }
 
 .advertname{
-    top: 3.48%;
-    bottom: 93.37%;
+    /* top: 3.48%;
+    bottom: 93.37%; */
     font-family: IBM Plex Sans!important;
     font-style: normal;
     font-weight: normal;
     font-size: 18.932px;
     line-height: 25px;
+    margin-top: 17px!important;
+    margin-left: 5px;
    color:#2D2D2D!important;
    /* margin-left: 80px; */
    
    }
 
+   .navUnderline{
+    
+    /* margin-top: 15px;
+    margin-bottom: 30px; */
+    /* border: 0; */
+    width: 28%;
+    border: 1px solid #444444;
+    position: absolute;
+    opacity: 0.8;
+
+  
+}
+
    .questionicon{
-    top: 3.48%;
-    bottom: 93.37%;
-    margin-right: 50px;
+    /* top: 3.48%; */
+    /* bottom: 93.37%; */
+    margin-right: 30px;
+    margin-left: 550px;
+    margin-top: 10px;
+    /* margin: 0px; */
    }
 
 .icongroup{
-    margin-left: 45%;
+    margin-left: 40%;
 }
 .smileicon{
-    margin-left: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 .settingicon{
-    margin-right: 10px;
+    /* margin-right: 10px; */
+    margin-top: 10px;
 }
