@@ -1,35 +1,45 @@
 import React from "react"
 import TopnavStyle from "../styles/topnav"
 
-import {Navbar} from "react-bootstrap"
+import { useRouteMatch, useLocation } from "react-router-dom"
 
-import {MdNotifications} from "react-icons/md"
-import {FaUserCircle} from "react-icons/fa"
-import {FiMenu} from "react-icons/fi"
+import { Navbar } from "react-bootstrap"
 
-import {Dropdown} from "semantic-ui-react"
+import { MdNotifications } from "react-icons/md"
+import { FaUserCircle } from "react-icons/fa"
+import { FiMenu } from "react-icons/fi"
+
+import { Dropdown } from "semantic-ui-react"
+
 
 
 const TopNavbar = ({sideNav, showSideNav}) => {
-    const PATH = window.location.pathname
+    const { path } = useRouteMatch()
+    const { pathname } = useLocation()
 
     let header
 
-    switch (PATH) {
+    switch (pathname) {
         case "/dashboard":
             header = "Dashboard"
             break;
-        case "/manage_ads":
+        case `${path}/manage_ads`:
             header = "Manage Ads"
             break;
-        case "/medicals":
-            header = "Medicals"
+        case `${path}/create_ads`:
+            header = "Create Ads"
             break;
-        case "/account":
-            header = "Account"
+        case `${path}/settings`:
+            header = "Settings"
             break;
-        case "/market":
-            header = "Market"
+        case `${path}/campaigns`:
+            header = "Campaigns"
+            break;
+        case `${path}/transactions`:
+            header = "Transactions"
+            break;
+        case `${path}/fund`:
+            header = "Fund Wallet"
             break;
         case "/help":
             header = "Help"

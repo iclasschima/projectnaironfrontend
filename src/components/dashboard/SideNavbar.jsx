@@ -1,14 +1,17 @@
 import React from "react";
 import SidenavStyle from "./styles/sidenav"
 
-import {Link} from "react-router-dom"
+import { Link, useRouteMatch, useLocation } from "react-router-dom"
 
 import { BsDot, BsTools} from "react-icons/bs"
 import {MdDashboard, MdFolder} from "react-icons/md"
-import {AiTwotoneSetting, AiFillNotification, AiFillCloseCircle} from "react-icons/ai"
 import {FaWallet, FaHandshake} from "react-icons/fa"
 import {IoMdHelpCircle}  from "react-icons/io"
-
+import {
+    AiTwotoneSetting,
+    AiFillNotification,
+    AiFillCloseCircle
+} from "react-icons/ai"
 
 const SideNavbar = ({sideNav, showSideNav}) => {
 
@@ -35,63 +38,63 @@ const SideNavbar = ({sideNav, showSideNav}) => {
 
 const Ul = ({sideNav, showSideNav}) => {
 
-    const PATH = window.location.pathname
-    console.log(PATH)
+    let { url } = useRouteMatch();
+    const {pathname} = useLocation()
 
     return (
         <ul>
             <li>
                 <Link 
-                    to="/dashboard" 
-                    className={PATH === "/dashboard" ? "active" : ""}> 
+                    to={`${url}`}
+                    className={pathname === "/dashboard" ? "active" : ""}> 
                     <MdDashboard /> Dashboard
                 </Link>
             </li>
             <li>
                 <Link 
-                    to="/create_ads" 
-                    className={PATH === "/create_ads" ? "active" : ""}>
+                    to={`${url}/create_ads`} 
+                    className={pathname === `${url}/create_ads` ? "active" : ""}>
                     <AiFillNotification /> Create Ads
                 </Link>
             </li>
             <li>
                 <Link 
-                    to="/manage_ads" 
-                    className={PATH === "/manage_ads" ? "active" : ""}>
+                     to={`${url}/manage_ads`} 
+                    className={pathname === `${url}/manage_ads` ? "active" : ""}>
                     <AiTwotoneSetting /> Manage Ads
                 </Link>
             </li>
             <li>
                 <Link 
-                    to="/fund_wallet" 
-                    className={PATH === "/fund_wallet" ? "active" : ""}>
+                    to={`${url}/fund`} 
+                    className={pathname === `${url}/fund` ? "active" : ""}>
                     <FaWallet /> Fund Wallet
                 </Link>
             </li>
             <li>
                 <Link 
-                    to="/all_campaigns"
-                    className={PATH === "/all_campaigns" ? "active" : ""}>
-                    <MdFolder id="all_campaigns_icon"/> All Campaigns
+                    to={`${url}/campaigns`} 
+                    className={pathname === `${url}/campaigns` ? "active" : ""}>
+                    <MdFolder id="all_campaigns_icon"/> Campaigns
                 </Link>
             </li>
             <li>
                 <Link 
-                    to="/transactions" 
-                    className={PATH === "/transactions" ? "active" : ""}>
+                   to={`${url}/transactions`}  
+                    className={pathname === `${url}/transactions` ? "active" : ""}>
                     <FaHandshake /> Transactions
                 </Link>
             </li>
             <li>
                 <Link 
-                    to="/help" 
-                    className={PATH === "/help" ? "active" : ""}>
+                    to={`${url}/help`}  
+                    className={pathname === `${url}/help` ? "active" : ""}>
                     <IoMdHelpCircle /> Help
                 </Link>
             </li>
             <li>
                 <Link 
-                    to={PATH}
+                    to={url}
                     onClick={() => showSideNav(!sideNav)}
                     className="d-block d-md-none">
                     <AiFillCloseCircle /> Close
@@ -102,8 +105,8 @@ const Ul = ({sideNav, showSideNav}) => {
 
             <li>
                 <Link 
-                    to="/settings" 
-                    className={PATH === "/help" ? "active" : ""}>
+                    to={`${url}/settings`} 
+                    className={pathname === `${url}/settings` ? "active" : ""}>
                     <BsTools /> Settings
                 </Link>
             </li>
