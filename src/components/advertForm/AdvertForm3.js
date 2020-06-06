@@ -1,93 +1,167 @@
-import React,{ Component} from "react";
+import React,{ Component } from "react";
 import AdvertNavBar from "../AdvertNavBar";
 import "../../advertBody.css";
-import AdvertFooter from "../AdvertFooter"
-// import AdvertiserHook from "../Hooks/AdvertiserHook"
+import arrowUp from "../../advertimages/Path 2arrup.svg"
+import arrowDown from "../../advertimages/Path 3arrdown.svg";
+import MenuItem from "@material-ui/core/MenuItem";
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+// import AdvertFooter from "../AdvertFooter"
+
 class AdvertForm3 extends Component{
-    
 
     render(){
         const alldata =JSON.parse( localStorage.getItem('User'));
 
-        console.log("AdvertBody1", this.props)
         const{
-            name,
-            // authors,
-            // country,
-            publisher,
-            // mediaType,
-            // numberofPages,
+            age1,
+            age2,
             onChangeData,
+            gender,
             onNext,
-            
-        }= this.props
+            onBack,
+        }=this.props
+
+
+
+        const age1dropdown={
+
+            age1:["18","20","25"]
+
+          }
+
+
+          const age2dropdown={
+
+            age2:["50","65","75"]
+
+          }
 
         return(
-            
-            <div>
-        
-                    <AdvertNavBar />
+
+
+
+            <div className=" ">
+
+                    {/* <AdvertNavBar /> */}
 
                     <div className="row">
 
                         <div className="col">
 
-                            <div className="card advertcard w-80">
+                            <div className="card advertcard">
 
-                                <div className="card-body advertcardcontent">
-                                    <div>
-                                        <p className="card-text advertbodytext">Let's start with describing your business</p>
-                                    </div>
-                                    <form>
-                                    
-                                    <div>
-                                            {/* <p className="question">{alldata[0].name}</p> */}
-                                            <p className="question">Ads title</p>
-
-                                        <input type="text" className="fillform"  value={name}></input>
-                                        {/* onChange={onChangeData('name')} */}
-                                        {/* <hr className="fillform"/> */}
-                                    </div>
+                                <div className="card-body advertcardcontent ">
 
                                     <div>
-                                            {/* <p className="question2">{alldata[1].publisher}</p> */}
-                                            <p className="question2">Landing page (website)</p>
-
-                                        <input type="text" className="fillform"  value={publisher}></input>
-                                        {/* onChange={onChangeData('publisher')} */}
-                                        {/* <hr className="fillform"/> */}
+                                        <p className="card-text advertbodytext">Who do you want to view this advert? </p>
                                     </div>
 
-                                    <div className="d-flex">
-                                    <p  className="btn startbtn" onClick={onNext}>Start</p><p className="press">PressEnter</p>
+                                    <div className="d-flex"   >
+                                        <p className="ageRec" value="All" name="gender"
+                                           onClick={onChangeData('gender')}
+                                           style={gender=== undefined ?{ backgroundColor:'#B66FD3'}:{backgroundColor:'transparent'}}
+
+                                        >
+                                           All</p>
+                                        <p className="ageRec"  value={gender}>Male</p>
+                                        <p className="ageRec" value={gender}>Female</p>
                                     </div>
-                                    
-                                    
-                                    </form>
+
+                                    <p>Age</p>
+                                    <div className="ageSpace ageGroup d-flex">
+
+
+
+                                              <FormControl className="ageHeight" variant="filled">
+                                                {/*<InputLabel  id="demo-simple-select-filled-label">50</InputLabel>*/}
+                                                <Select
+                                                    labelId="demo-simple-select-filled-label"
+                                                    id="demo-simple-select-filled"
+                                                    displayEmpty
+                                                    value={age2}
+                                                    name="age2"
+                                                     onChange={onChangeData('age2')}
+                                                    renderValue={(selected) => {
+                                                        if (selected.length === 0) {
+                                                            return <em>65</em>;
+                                                        }
+
+                                                        return  selected;
+                                                    }}
+
+                                                >
+                                                {age2dropdown.age2.map((option) => (
+                                                        <MenuItem  key={option} value={option}>
+                                                            {option}
+
+                                                        </MenuItem>
+                                                    ))}
+                                                    </Select>
+                                             </FormControl>
+                                  </div>
+                                        {/* <p>{alldata[1].country}</p> */}
+                                    {/* <div className="ageSpace">
+                                    <div className="ageRec ageGroup  ">
+                                        <input id="age" type="select"></input>
+                                        <label for="age" >18</label> */}
+
+                                      {/* <p className="dropdown-toggle ageText ">  18 </p> */}
+
+                                    {/* </div> */}
+                                    {/* <div className="ageGroup\">
+                                    <hr className="ageDsh"/>
+                                    </div> */}
+                                    {/* <hr className="ageDash"/> */}
+
+
+                                    {/* <div className="ageRec ageGroup  ">
+                                      <p className="dropdown-toggle ageText">  50 </p>
+                                    </div>
+                                    </div>    */}
+
+                                    <div className="startfloat d-flex">
+                                    <p onClick={onNext} className="btn startbtn">Next</p><p className="press">PressEnter</p>
+                                    </div>
+
+                                    <div className="justify-content-end">
+                                        <div className=" arr  ">
+                                            <img onClick={onNext} className="arrnav" src={arrowUp} alt="arrow"/>
+                                        </div>
+                                        <div className=" arr  ">
+                                            <img onClick={onBack} className="arrnav" src={arrowDown} alt="arrow"/>
+                                        </div>
+                                    </div>
+
+
+
                                 </div>
-
                             </div>
 
                         </div>
 
-                        <div className="col-md-4">
+                        {/* <div className="col-md-4">
                             <div className="card text-left w-20 advertcard ">
                                 <div className="card-body advertcardcontent infocard">
-                                    <p className="card-text adverinfotext"> There are 254,432 
+                                    <p className="card-text adverinfotext"> There are 254,432
                                     possible audiences/customers in our network around you.</p>
-                                    <a href="/" className="btn gobtn">Get to them Now</a>
+                                    <a href="/advert2" class="btn gobtn">Get to them Now</a>
 
                                 </div>
 
-                            </div> 
+                            </div>
 
-                        </div>
+                        </div> */}
 
                     </div>
 
                     {/* <AdvertFooter /> */}
 
-                
+
             </div>
         );
     }

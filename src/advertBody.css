@@ -1,12 +1,10 @@
 .advertcardcontent{
-    /* background-color: red; */
-    /* background: rgb(203, 215, 226); */
-    /* width: 50rem; */
-    /* opacity: 0.9; */
-    background: #F5F9FC;
-    /* border: 1px solid #444444; */
-    /* width: 80%; */
-/* opacity: 0.07; */
+    /*margin: auto !important;*/
+    background: #FFFFFF;
+box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+padding-left: 32% !important;
+padding-right: 30px !important;
+
 }
 .advertcardpicture{
     background: white;
@@ -17,25 +15,27 @@
 .advertcard{
     /* background-color: red; */
     border: none!important;
-    /* width: 50rem; */
-    margin-top: 40px;
-    margin-left: 30px;
-    margin-bottom: 30px;
+    margin:auto !important;
+}
+@media only screen and (max-width: 500px){
+    .advertbodytext {
+        font-size: 5px;
+    }
+    #map {
+        width: auto  !important;
+    }
+    #input-group{
+        width: auto !important;
+    }
+    .radioRec{
+        width: auto !important;
+    }
+}
+#input-group{
+    width: 360px ;
 }
 
-.advertinfotext{
-font-family: IBM Plex Sans;
-font-style: normal;
-font-weight: 500;
-font-size: 15.5px;
-line-height: 17px;
-margin-right: 45px;
-margin-bottom: 30px;
 
-color: #2D2D2D;
-
-/* opacity: 0!important; */
-}
 .advertbodytext{
 font-family: IBM Plex Sans;
 font-style: normal;
@@ -56,21 +56,21 @@ color: #2D2D2D;
     /* padding-left: 50px; */
 }
 .gobtn{
-margin-bottom: 25px;
-background-color: #6FA8D3;
-color: white;
-font-family: IBM Plex Sans;
-font-style: normal;
-font-weight: normal;
-font-size: 15.932px;
-line-height: 20px;
+margin-bottom: 25px !important;
+background-color: #6FA8D3 !important;
+color: white !important;
+font-family: IBM Plex Sans !important;
+font-style: normal !important;
+font-weight: normal !important;
+font-size: 15.932px !important;
+line-height: 20px !important;
 }
 .fillform{
     
     margin-top: 15px;
     margin-bottom: 5%;
         /* border: 0; */
-     width: 30%;
+     width: 40% !important;
     border: none !important;
     background: transparent !important;
     border-bottom: 1px solid#444444 !important;
@@ -106,25 +106,25 @@ color: #2D2D2D;
     
     }
 .startbtn{
-    margin-top: 70px;
-    background: #2D2D2D;
-    color: white;
+    margin-top: 70px !important ;
+    background: #2D2D2D !important;
+    color: white !important;
     margin-bottom: 5% !important;
-    border: 3px solid #B66FD3;
-    font-family: IBM Plex Sans;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24.399px;
-    line-height: 25px;
+    border: 3px solid #B66FD3 !important;
+    font-family: IBM Plex Sans !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 24.399px !important;
+    line-height: 25px !important;
     /* width: 10%; */
-    outline: none;
+    outline: none !important;
     float: none!important;
 }.press{
-    margin-top: 13px;
+    margin-top: 78px !important ;
     margin-left: 15px;
 }
 .want{
-    margin-top: 17px!important;
+    margin-top: 15px!important;
     margin-right: 5px!important;
 
 }
@@ -151,14 +151,15 @@ color: #2D2D2D;
 
   }
   .ageRec{
-    height: 25px;
-    width: 45px;
-    margin-right: 15px;
-    
+    height: 35px;
+    width: 70px;
+      text-align: center;
+    /*margin-right: 15px;*/
+    padding-top: 7px;
     /* background-color: #555; */
     /* color: #6FA8D3; */
 
-    border:  2px solid #2D2D2D;
+      border: 1px solid #000000;
   }
   .ageGroup{
       /* display: inline; */
@@ -174,7 +175,7 @@ color: #2D2D2D;
   }
   .ageDash{
       width: 10%;
-      order: 2px solid#000000!important;
+      order: 2px solid #000000!important;
   }
   .startfloat{
     float: none!important;
@@ -197,16 +198,17 @@ color: #2D2D2D;
   .arr{
     height: 30px;
     width: 40px;
-    margin-right: 2px;
+    margin-right: 5px;
     
     background-color: #2D2D2D;
     /* color: #6FA8D3; */
-    display: block;
+    display: flex;
     float: left;
     position: relative;
-    left: 57%;
-    margin-top: 10px;
+    left:65% !important;
+    margin-top: 50px;
     color: white;
+    justify-content: end !important;
 
     border:  2px solid #B66FD3;
   }
@@ -271,10 +273,16 @@ margin-bottom: 20px;
         clear: both;
     }
 }
+
+@media (max-width:768px){
+    .fillform{
+        width: auto !important;
+    }
+}
 .radioRec{
     height: 53px;
     width: 320px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border:  2px solid #2D2D2D;
   }
   .picRec{
@@ -303,11 +311,7 @@ margin-bottom: 20px;
       margin-bottom: 18px;
     
   }
-  .manual{
-    
-    margin-bottom: 70px!important;
-  
-}
+
   .autoText{
     font-family: IBM Plex Sans;
     font-style: normal;
@@ -335,40 +339,44 @@ color: #B66FD3;
 padding-bottom: 0px!important;
 }
 
-input[type='radio']:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: -2px;
-    left: -1px;
-    position: relative;
-    background-color: #F5F9FC;
-    content: '';
-    display: inline-block;
-    visibility: visible;
-    border: 1px solid black;
-}
+/*input[type='radio'] .PrivateSwitchBase-input-92 :after {*/
+/*    width: 15px;*/
+/*    height: 15px;*/
+/*    border-radius: 15px;*/
+/*    top: -2px;*/
+/*    left: -1px;*/
+/*    position: relative;*/
+/*    background-color: #F5F9FC;*/
+/*    content: '';*/
+/*    display: inline-block;*/
+/*    visibility: visible;*/
+/*    border: 1px solid black;*/
+/*}*/
 
-input[type='radio']:checked:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: -2px;
-    left: -1px;
-    position: relative;
-    background-color: black;
-    content: '';
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid  #B66FD3;
+/*input[type='radio'] .PrivateSwitchBase-input-92:checked:after {*/
+/*    width: 15px;*/
+/*    height: 15px;*/
+/*    border-radius: 15px;*/
+/*    top: -2px;*/
+/*    left: -1px;*/
+/*    position: relative;*/
+/*    background-color: black;*/
+/*    content: '';*/
+/*    display: inline-block;*/
+/*    visibility: visible;*/
+/*    border: 2px solid  #B66FD3;*/
+/*}*/
+.MuiSvgIcon-root {
+    fill: #B66FD3 !important;
 }
 
 .MuiFormControl-root {
     width: 230px;
 }
 
+
 .MuiFilledInput-root{
-    background-color:#F5F9FC !important;
+    background-color: transparent !important;
     border: 0.5px solid #7C7C7C;
     border-top-left-radius: 0px !important;
     border-top-right-radius: 0px !important;
@@ -407,4 +415,91 @@ input[type='radio']:checked:after {
 
 .MuiFormLabel-root {
     color: #000000;
+}
+
+.MuiSelect-select.MuiSelect-select {
+    /* padding-right: 24px; */
+    margin-bottom: 10px;
+    background-color: transparent !important;
+
+}
+/*Map */
+#map {
+    height: 250px;
+    width: 360px;
+}
+
+
+
+
+#description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+#infowindow-content .title {
+    font-weight: bold;
+}
+
+#infowindow-content {
+    display: none;
+}
+
+#map #infowindow-content {
+    display: inline;
+}
+
+.pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto;
+}
+
+#pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+}
+
+.pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+}
+
+.pac-controls label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 5px 11px 5px 13px;
+    text-overflow: ellipsis;
+    width: 360px;
+    border-bottom: 1px solid #444444;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+}
+
+#title {
+    color: #fff;
+    background-color: #4d90fe;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 12px;
 }

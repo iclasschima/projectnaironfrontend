@@ -19,6 +19,9 @@ const TopNavbar = ({sideNav, showSideNav}) => {
         case "/dashboard":
             header = "Dashboard"
             break;
+        case "/advertForm":
+             header = "Create Ads"
+             break;
         case "/manage_ads":
             header = "Manage Ads"
             break;

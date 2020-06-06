@@ -49,8 +49,8 @@ const Ul = ({sideNav, showSideNav}) => {
             </li>
             <li>
                 <Link 
-                    to="/create_ads" 
-                    className={PATH === "/create_ads" ? "active" : ""}>
+                    to="/advertForm" 
+                    className={PATH === "/advertForm" ? "active" : ""}>
                     <AiFillNotification /> Create Ads
                 </Link>
             </li>

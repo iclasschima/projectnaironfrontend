@@ -10,14 +10,14 @@ import Dashboard from "./components/Dashboard"
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Advert from "./components/advertForm/Advert";
-import AdvertForm11 from "./components/advertForm/AdvertForm11";
+import AdvertMap from "./components/advertForm/AdvertMap";
 
 
 // import AdvertBody from "./components/advertForm/AdvertBody";
 // import AdvertBody1 from "./components/advertForm/AdvertBody1";
 // import AdvertBody2 from "./components/advertForm/AdvertBody2";
 // import AdvertBody3 from "./components/advertForm/AdvertBody3";
-// import AdvertBody4 from "./components/advertForm/AdvertBody4";
+// import AdvertForm5 from "./components/advertForm/AdvertForm5";
 // import AdvertBody5 from "./components/advertForm/AdvertBody5";
 import { history } from "./_helpers";
 import { alertActions } from "./_actions";
@@ -26,6 +26,7 @@ import { HomePage } from "./components/Homepage";
 import { connect } from "react-redux";
 import sign from "./components/SignUp2";
 import log from "./components/login2";
+import AdvertForm5 from "./components/advertForm/AdvertForm5";
 
 
 class App extends Component {
@@ -54,8 +55,10 @@ class App extends Component {
                 <Route path="/signup" component={sign} />
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/manage_ads" component={Dashboard} />
-                <Route exact path={"/advertForm"} component={Advert} />
-                <Route exact path={"/ad"} component={AdvertForm11} />
+                <Route exact path={"/advertForm"} component={Dashboard} />
+                <Route exact path={"/map"} component={AdvertMap} />
+                <Route exact path={"/ad"} component={AdvertForm5} />
+
                 <Route component={Dashboard} />
               </Switch>
             {/* </Router> */}

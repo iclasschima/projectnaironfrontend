@@ -7,27 +7,59 @@ class AdvertiserHook extends Component{
         super(props);
         this.state ={
             page:1,
+            percent:3,
+            color: '#3FC7FA',
+            zoom: 13,
+            // maptype: 'roadmap',
+            place_formatted: '',
+            place_id: '',
+            place_location: '',
             questions:{
                 name:'',
                 authors:[],
                 country:'',
                 publisher:'',
                 mediaType:'',
+                platform:'',
+                manualPlatform:'',
+                devices:'',
+                brand:'',
+                versions:'',
+                technologies:'',
+                techChoice:'',
                 numberofPages:'',
                 campaign:'',
                 goal:'',
-                age:''
+                age1:'',
+                age2:'',
+                landingPage:'',
+                gender:'empty',
             } 
             
         }
+        this.changeState = this.changeState.bind(this);
+        this.onChangeData= this.onChangeData.bind(this)
     }
 
 
     componentDidMount(){
+
+
         console.log("AdvertiserHooks",this.props)
     }
 
 
+    changeState() {
+
+
+            const value = parseInt(Math.random() * 100, 10);
+            this.setState({
+                percent: value,
+                // color: colorMap[parseInt(Math.random() * 3, 10)],
+                // page:this.state.page +1
+            });
+
+    }
 
     getQuestionData= async()=>{
         const questionURL = "https://www.anapioficeandfire.com/api/books?pageSize=30";
@@ -50,6 +82,18 @@ class AdvertiserHook extends Component{
     };
 
 
+     handleChangeMultiple = (event) => {
+        const { options } = event.target;
+        const value = [];
+        for (let i = 0, l = options.length; i < l; i += 1) {
+          if (options[i].selected) {
+            value.push(options[i].value);
+          }
+        }
+        this.setState(value);
+      };
+
+
     onNext=(e)=>{
         // console.log("Before")
         const{
@@ -57,6 +101,7 @@ class AdvertiserHook extends Component{
             publisher,
             campaign,
             goal,
+            age,
         }=this.state.questions;
 
         function errMessage(){
@@ -73,31 +118,36 @@ class AdvertiserHook extends Component{
         const page2NotEmpty= goal==="" ;
         
 
-        if(this.state.page===1 ){
-            if(page1NotEmpty){
-                errMessage()
-                setTimeout(empty,5000)
-            }
-            else if(!page1NotEmpty){
-                this.setState({page:this.state.page +1})
-            }
-        }else if(this.state.page===2){
-            if(page1NotEmpty){
-                errMessage()
-                setTimeout(empty,5000)
-            }else if(!page2NotEmpty){
-                this.setState({page:this.state.page +1})
-            }
+        if(this.state.page!==0 ){
+            this.changeState()
+            this.setState({page:this.state.page +=1})
         }
+        //     if(page1NotEmpty){
+        //         errMessage()
+        //         setTimeout(empty,5000)
+        //     }
+        //     else if(!page1NotEmpty){
+        //
+        //         this.setState({page:this.state.page +1})
+        //
+        //     }
+        // }else if(this.state.page===2){
+        //     if(page2NotEmpty){
+        //         errMessage()
+        //         setTimeout(empty,5000)
+        //     }else if(!page2NotEmpty){
+        //         this.setState({page:this.state.page +1})
+        //     }
+        // }
 
-        alert("Click")
+        // alert("Click")
 
     };
 
 
     onBack=(e)=>{
         if(this.state.page > 1){
-            this.setState({page:this.state.page - 1})
+            this.setState({page:this.state.page -=1})
         }
     };
 

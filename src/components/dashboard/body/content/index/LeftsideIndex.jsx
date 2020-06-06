@@ -91,7 +91,7 @@ const Leftside = () => {
                         </Col>
 
                         <Col id="bottom_button_div">
-                        <a href="/dashboard" className="btn">Create New Campaign</a>
+                        <a href="/advertForm" className="btn">Create New Campaign</a>
                     </Col>
                 </LeftSideStyled>
             </Col>

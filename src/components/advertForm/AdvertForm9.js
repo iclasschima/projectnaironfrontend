@@ -13,19 +13,19 @@ import MenuItem from "@material-ui/core/MenuItem";
 
 // import AdvertFooter from "../AdvertFooter"
 
-class AdvertForm5 extends Component{
+class AdvertForm9 extends Component{
 
     render(){
         const{
-            platform,
-            manualPlatForm,
+            technologies,
+            techChoice,
             onNext,
             onBack,
             onChangeData,
         }=this.props
-        const manualdropdown={
+        const techdropdown={
 
-            manualPlatform:["Legit.com","Nairon.com","Semicolon.africa"]
+            techChoice:[ "Spactranet Data","MTN","Glo","Visafone","Etisalat"]
 
         }
 
@@ -47,51 +47,47 @@ class AdvertForm5 extends Component{
                                         <p className="card-text advertbodytext">Which platform do you want this ads? </p>
                                     </div>
                                     <form>
-                                    <RadioGroup value={platform} onChange={onChangeData('platform')} >
+                                    <RadioGroup value={technologies} onChange={onChangeData('technologies')} >
                                         <p className="recommend">RECOMMENDED FOR YOU </p>
-                                    <div className="radioRec " style={platform==="Automatic"?{border:"1px solid #9160A4"}:{border:"1px solid #444444"}}>
+                                    <div className="radioRec " style={technologies==="All ISP"?{border:"1px solid #9160A4"}:{border:"1px solid #444444"}}>
 
-                                         {/*<input type="radio" id="auto1" value="Automatic" name="action" />*/}
-                                         {/*<label htmlFor="auto1" className="autoText">Automatic placement</label>*/}
-
-                                        <FormControlLabel  value="Automatic" className="m-auto" control={<Radio />} label="Automatic placement" labelPlacement={"end"} />
+                                        <FormControlLabel  value="All ISP" className="m-auto" control={<Radio />} label="All ISP Technologies" labelPlacement={"end"} />
 
                                     </div>
 
-                                    <div className="radioRec manual " style={platform==="Manual"?{border:"1px solid #9160A4"}:{border:"1px solid #444444"}}>
+                                    <div className="radioRec manual " style={technologies==="Others"?{border:"1px solid #9160A4"}:{border:"1px solid #444444"}}>
 
-                                        <FormControlLabel   className="m-auto" value="Manual" control={<Radio />} label="Manual placement" labelPlacement={"end"}/>
-
+                                        <FormControlLabel   className="m-auto" value="Others" control={<Radio />} label="Others" labelPlacement={"end"}/>
 
                                     </div>
-                                        {platform==="Manual" ?
-                                        <FormControl className="ageHeight " variant="filled">
 
-                                            <Select
-                                                labelId="demo-simple-select-filled-label"
-                                                id="demo-simple-select-filled"
-                                                value={manualPlatForm}
-                                                defaultValue="Legit.com"
-                                                name="age1"
+                                        {technologies==="Others" ?
+                                            <FormControl className="ageHeight " variant="filled">
+
+                                                <Select
+                                                    labelId="demo-simple-select-filled-label"
+                                                    id="demo-simple-select-filled"
+                                                    value={techChoice}
+                                                    defaultValue="MTN"
+                                                    name="tech"
 
 
-                                                onChange={onChangeData('manualPlatform')}
-                                            >
-                                                {manualdropdown.manualPlatform.map((option) => (
-                                                    <MenuItem key={option} value={option}>
-                                                        {option }
-                                                    </MenuItem>
-                                                ))}
-                                            </Select>
-                                        </FormControl>:<input className="d-none"/>}
-
+                                                    onChange={onChangeData('techChoice')}
+                                                >
+                                                    {techdropdown.techChoice.map((option) => (
+                                                        <MenuItem key={option} value={option}>
+                                                            {option }
+                                                        </MenuItem>
+                                                    ))}
+                                                </Select>
+                                            </FormControl>:<input className="d-none"/>}
 
                                     </RadioGroup>
 
 
 
                                     <div className="startfloat d-flex">
-                                    <p onClick={onNext}  className="btn startbtn">Next</p><p className="press">PressEnter</p>
+                                    <p onClick={onNext} className="btn startbtn">Next</p><p className="press">PressEnter</p>
                                     </div>
 
                                         <div className="justify-content-end">
@@ -121,4 +117,4 @@ class AdvertForm5 extends Component{
     }
 }
 
-export default AdvertForm5;
+export default AdvertForm9;

@@ -1,96 +1,113 @@
 import React,{ Component } from "react";
 import AdvertNavBar from "../AdvertNavBar";
 import "../../advertBody.css";
-import arrowUp from "../../advertimages/Path 2arrup.svg"
-import arrowDown from "../../advertimages/Path 3arrdown.svg"
+import AdvertFooter from "../AdvertFooter";
+import TextField from "@material-ui/core/TextField";
+import MenuItem from "@material-ui/core/MenuItem";
+import InputLabel from '@material-ui/core/InputLabel';
+// import MenuItem from '@material-ui/core/MenuItem';
+// import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import arrowUp from "../../advertimages/Path 2arrup.svg";
+import arrowDown from "../../advertimages/Path 3arrdown.svg";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Radio from "@material-ui/core/Radio";
+// import { MDBSelect} from "mdbreact";
 
-// import AdvertFooter from "../AdvertFooter"
 
-class AdvertForm6 extends Component{
+class AdvertForm7 extends Component{
 
+    
+    
     render(){
+        const{
+            devices,
+            onBack,
+            onChangeData,
+            onNext,
+        }=this.props
+
+      const devicesdropdown={
+
+        devices:["Mobile Device Only","Desktop Device Only"]
+
+      }
+
         return(
 
             <div className="">
-        
-                    <AdvertNavBar />
-                   
-                    <div className="row">
 
-                        <div className="col">
+                {/* <AdvertNavBar /> */}
 
-                            <div className="card advertcard">
+                <div className="row">
 
-                                <div className="card-body advertcardcontent ">
-                                <div className="row-md-3 ">
-                                {/* <span className="complete">3% completed</span> */}
-                                <div className=" progress questionSlide " >
-                                    
-                                    <div className=" questionPro" role="progressbar"  aria-valuenow="3" aria-valuemin="0" aria-valuemax="100"><p>3%</p></div>
-                                    </div>
+                    <div className="col">
+
+                        <div className="card advertcard">
+
+                            <div className="card-body advertcardcontent ">
+
+                                <div>
+                                    <p className="card-text advertbodytext">What brands do you want your advert to appear?  </p>
                                 </div>
-                                <div className=" arr  "><a href="/advert4"> <img className="arrnav" src={arrowUp} alt="arrow"/></a></div>
-                                <div className=" arr   "><a href="/advert2"> <img className="arrnav" src={arrowDown} alt="arrow"/></a></div>
-
-
-                                    
-                                    <div>
-                                        <p className="card-text advertbodytext">Which platform do you want this ads? </p>
-                                    </div>
-                                    <form>
-                                    
-                                    
-                                        
-                                    
-                                    
-                                    <div className="radioRec ">
+                                <form>
+                                    <RadioGroup value={devices} onChange={onChangeData('devices')} >
                                         <p className="recommend">RECOMMENDED FOR YOU </p>
-                                         <input type="radio" id="auto" name="action" /> 
-                                         <label for="auto" className="autoText">Automatic placement</label>
-                                       
-                                    </div>
-                                    
-                                    <div className="radioRec manual ">
-                                         <input type="radio" id="auto" name="action" /> 
-                                         <label for="auto" className="autoText">Manual placement</label>
-                                       
-                                    </div>
-                                    
-                                
-                                    
-                                    
+                                        <div className="radioRec " style={devices==="All Brand"?{border:"1px solid #9160A4"}:{border:"1px solid #444444"}}>
+
+                                            <FormControlLabel  value="All Device" className="m-auto" control={<Radio />} label="All Devices (mobile & desktop)" labelPlacement={"end"} />
+
+                                        </div>
+
+                                        <div className="radioRec manual " style={devices==="Mobile "?{border:"1px solid #9160A4"}:{border:"1px solid #444444"}}>
+
+                                            <FormControlLabel   className="m-auto" value="Mobile" control={<Radio />} label="Mobile Devices Only" labelPlacement={"end"}/>
+
+                                        </div>
+
+                                        <div className="radioRec " style={devices==="Desktop "?{border:"1px solid #9160A4"}:{border:"1px solid #444444"}}>
+
+                                            <FormControlLabel  value="Desktop " className="m-auto" control={<Radio />} label="Desktop Devices Only" labelPlacement={"end"} />
+
+                                        </div>
+
+                                    </RadioGroup>
+
+
 
                                     <div className="startfloat d-flex">
-                                    <p  className="btn startbtn">Next</p><p className="press">PressEnter</p>
+                                        <p onClick={onNext} className="btn startbtn">Next</p><p className="press">PressEnter</p>
                                     </div>
-                                    </form>
-                                </div>
 
+                                    <div className="justify-content-end">
+                                        <div className=" arr  ">
+                                            <img onClick={onNext} className="arrnav" src={arrowUp} alt="arrow"/>
+                                        </div>
+                                        <div className=" arr  ">
+                                            <img onClick={onBack} className="arrnav" src={arrowDown} alt="arrow"/>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-
-                        </div>
-
-                        <div className="col-md-4">
-                            <div className="card text-left w-20 advertcard ">
-                                <div className="card-body advertcardcontent infocard">
-                                    <p className="card-text adverinfotext"> There are 254,432 
-                                    possible audiences/customers in our network around you.</p>
-                                    <a href="/" class="btn gobtn">Get to them Now</a>
-
-                                </div>
-
-                            </div> 
 
                         </div>
 
                     </div>
 
-                    {/* <AdvertFooter /> */}
 
-                
+
+                </div>
+
+                {/* <AdvertFooter /> */}
+
+
             </div>
+            
         );
+        
     }
 }
 
-export default AdvertForm6;
+export default AdvertForm7;

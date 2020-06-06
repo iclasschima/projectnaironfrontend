@@ -9,26 +9,25 @@ import InputLabel from '@material-ui/core/InputLabel';
 // import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import arrowUp from "../../advertimages/Path 2arrup.svg";
+import arrowDown from "../../advertimages/Path 3arrdown.svg";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Radio from "@material-ui/core/Radio";
 // import { MDBSelect} from "mdbreact";
 
 
 class AdvertForm7 extends Component{
-  constructor(props){
-    super(props);
-    this.state={
-      devices:""
-    }
-  };
-
-  onHandleChange=(e)=>{
-    this.setState({[e.target.name]:e.target.value});
-    console.log(this.state)
-  }
-
 
     
     
     render(){
+        const{
+            brand,
+            onBack,
+            onChangeData,
+            onNext,
+        }=this.props
 
       const devicesdropdown={
             
@@ -36,92 +35,74 @@ class AdvertForm7 extends Component{
 
       }
 
-      let {devices} = this.state;
         return(
-         
-            <div className=" ">
-        
-                    <AdvertNavBar />
 
-                    <div className="row">
-                        
+            <div className="">
 
-                        <div className="col">
+                {/* <AdvertNavBar /> */}
 
-                            <div className="card advertcard w-80">
+                <div className="row">
 
-                                <div className="card-body advertcardcontent">
-                                    <div>
-                                        <p className="card-text advertbodytext">Select specific mobile devices and operating systems</p>
-                                    </div>
-                                    
-                                    {/* <TextField onChange={this.setOnChange}
-                                            // fullWidth
-                                           select  label="All Device (Recommended) " name='devices'
-                                           variant="outlined" value={devices}  margin="normal"
-                                           color={"secondary"} required
-                                           // defaultValue="Age Range"
-                                     >
-                                    {devicesdropdown.devices.map((option) => (
-                                        <MenuItem key={option} value={option}>
-                                            {option}
-                                        </MenuItem>
-                                    ))}
+                    <div className="col">
 
-                                </TextField> */}
+                        <div className="card advertcard">
 
+                            <div className="card-body advertcardcontent ">
 
-                                <FormControl variant="filled">
-                                  <InputLabel id="demo-simple-select-filled-label">All Device(Recommended)</InputLabel>
-                                  <Select
-                                    labelId="demo-simple-select-filled-label"
-                                    id="demo-simple-select-filled"
-                                    value={devices}
-                                    name="devices"
-                                    onChange={this.onHandleChange}
-                                  >
-                                  {devicesdropdown.devices.map((option) => (
-                                        <MenuItem key={option} value={option}>
-                                            {option}
-                                        </MenuItem>
-                                    ))}
-                                    </Select>
-                                  </FormControl>
-
-                                    <div>
-                                        <p className="question2">Business website</p>
-                                        <input type="text" className="fillform"></input>
-                                        {/* <hr className="fillform"/> */}
-                                    </div>
-
-                                    <div>
-                                    <a href="/" class="btn startbtn">Start</a>
-                                    </div>
-                                    
+                                <div>
+                                    <p className="card-text advertbodytext">What brands do you want your advert to appear?  </p>
                                 </div>
+                                <form>
+                                    <RadioGroup value={brand} onChange={onChangeData('brand')} >
+                                        <p className="recommend">RECOMMENDED FOR YOU </p>
+                                        <div className="radioRec " style={brand==="All Brand"?{border:"1px solid #9160A4"}:{border:"1px solid #444444"}}>
 
+                                            <FormControlLabel  value="All Brand" className="m-auto" control={<Radio />} label="All Brand (mobile & desktop)" labelPlacement={"end"} />
+
+                                        </div>
+
+                                        <div className="radioRec manual " style={brand==="Mobile Brand"?{border:"1px solid #9160A4"}:{border:"1px solid #444444"}}>
+
+                                            <FormControlLabel   className="m-auto" value="Mobile Brand" control={<Radio />} label="Mobile Brand Only" labelPlacement={"end"}/>
+
+                                        </div>
+
+                                        <div className="radioRec " style={brand==="Desktop Brand"?{border:"1px solid #9160A4"}:{border:"1px solid #444444"}}>
+
+                                            <FormControlLabel  value="Desktop Brand" className="m-auto" control={<Radio />} label="Desktop Brand Only" labelPlacement={"end"} />
+
+                                        </div>
+
+                                    </RadioGroup>
+
+
+
+                                    <div className="startfloat d-flex">
+                                        <p onClick={onNext} className="btn startbtn">Next</p><p className="press">PressEnter</p>
+                                    </div>
+
+                                    <div className="justify-content-end">
+                                        <div className=" arr  ">
+                                            <img onClick={onNext} className="arrnav" src={arrowUp} alt="arrow"/>
+                                        </div>
+                                        <div className=" arr  ">
+                                            <img onClick={onBack} className="arrnav" src={arrowDown} alt="arrow"/>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-
-                        </div>
-
-                        <div className="col-md-4">
-                            <div className="card text-left w-20 advertcard ">
-                                <div className="card-body advertcardcontent infocard">
-                                    <p className="card-text adverinfotext"> There are 254,432 
-                                    possible audiences/customers in our network around you.</p>
-                                    <a href="/" class="btn gobtn">Get to them Now</a>
-
-                                </div>
-
-                            </div> 
 
                         </div>
 
                     </div>
 
-                    <AdvertFooter />
 
-                
+
+                </div>
+
+                {/* <AdvertFooter /> */}
+
+
             </div>
             
         );
