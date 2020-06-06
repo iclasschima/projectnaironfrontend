@@ -1,9 +1,9 @@
 import React from "react"
 
-import ManageAdsStyled from "../../styles/manageAds"
+import ManageAdsStyled from "../../../styles/manageAds"
 
-import TopBar from "./manageAds/TopBar"
-import BottomTable from "./manageAds/BottomTable"
+import TopBar from "./TopBar"
+import BottomTable from "./BottomTable"
 
 const ManageAds = () => {
     return (

@@ -120,9 +120,9 @@ class SignUp extends React.Component {
     });
   }
 
-  phoneHandleChange = (e) => {
-    this.state.user.phoneNumber = e;
-  };
+  // phoneHandleChange = (e) => {
+  //   this.state.user.phoneNumber = e;
+  // };
 
   handleSubmit(event) {
     event.preventDefault();
@@ -139,7 +139,7 @@ class SignUp extends React.Component {
   }
   render() {
     const { classes } = this.props;
-    const { registering } = this.props;
+   // const { registering } = this.props;
     const { user, submitted } = this.state;
     console.log(this.state);
 
@@ -291,10 +291,10 @@ class SignUp extends React.Component {
                             style={{ fontSize: 12 }}
                           >
                             By signing up, you agree to ProjectNairon's
-                            <a id="link" href="#" variant="p">
+                            {/* <a id="link" href="#" variant="p">
                               {" "}
                               Terms of Service and
-                            </a>
+                            </a> */}
                           </Typography>
                         </Grid>
                         <Grid item xs={12}>
@@ -304,10 +304,10 @@ class SignUp extends React.Component {
                             style={{ fontSize: 12 }}
                           >
                             Already signed up?
-                            <a id="link" href="#" variant="p">
+                            {/* <a id="link" href="#" variant="p">
                               {" "}
                               Log in
-                            </a>
+                            </a> */}
                           </Typography>
                         </Grid>
                       </Grid>

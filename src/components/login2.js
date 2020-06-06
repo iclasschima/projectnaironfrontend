@@ -3,18 +3,18 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
+//import FormControlLabel from "@material-ui/core/FormControlLabel";
+//import Checkbox from "@material-ui/core/Checkbox";
+//import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+//import Box from "@material-ui/core/Box";
+//import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import naironLogo from "../img/NAIRON.png";
 import "react-phone-input-2/lib/bootstrap.css";
-import ReactPhoneInput from "react-phone-input-2";
+//import ReactPhoneInput from "react-phone-input-2";
 import DropdownExampleSearchDropdown from "./dropdown";
 import "../Design/SignIn.css";
 import googleicon from "../img/googleicon.png";
@@ -142,7 +142,7 @@ class SignIn extends React.Component {
   }
   render() {
     const { classes } = this.props;
-    const { registering } = this.props;
+    //const { registering } = this.props;
     const { user, submitted } = this.state;
     console.log(this.state);
 
@@ -350,10 +350,10 @@ class SignIn extends React.Component {
                             style={{ fontSize: 12 }}
                           >
                             By signing up, you agree to ProjectNairon's
-                            <a id="link" href="#" variant="p">
+                            {/* <a id="link" href="#" variant="p">
                               {" "}
                               Terms of Service and
-                            </a>
+                            </a> */}
                           </Typography>
                         </Grid>
                         <Grid item xs={12}>
@@ -363,10 +363,10 @@ class SignIn extends React.Component {
                             style={{ fontSize: 12 }}
                           >
                             Already signed up?
-                            <a id="link" href="#" variant="p">
+                            {/* <a id="link" href="#" variant="p">
                               {" "}
                               Log in
-                            </a>
+                            </a> */}
                           </Typography>
                         </Grid>
                       </Grid>

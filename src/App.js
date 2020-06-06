@@ -1,33 +1,54 @@
 import React, { Component } from "react";
 import {
-  // BrowserRouter,
   Switch,
   Route,
-  BrowserRouter
+  BrowserRouter,
+  Redirect
 } from "react-router-dom";
 
-import Dashboard from "./components/Dashboard"
+import Loadable from "react-loadable"
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import Advert from "./components/advertForm/Advert";
-import AdvertMap from "./components/advertForm/AdvertMap";
-
-
-// import AdvertBody from "./components/advertForm/AdvertBody";
-// import AdvertBody1 from "./components/advertForm/AdvertBody1";
-// import AdvertBody2 from "./components/advertForm/AdvertBody2";
-// import AdvertBody3 from "./components/advertForm/AdvertBody3";
-// import AdvertForm5 from "./components/advertForm/AdvertForm5";
-// import AdvertBody5 from "./components/advertForm/AdvertBody5";
 import { history } from "./_helpers";
 import { alertActions } from "./_actions";
 import { PrivateRoute } from "./_components";
-import { HomePage } from "./components/Homepage";
+// import { HomePage } from "./components/Homepage";
 import { connect } from "react-redux";
-import sign from "./components/SignUp2";
-import log from "./components/login2";
-import AdvertForm5 from "./components/advertForm/AdvertForm5";
 
+import { useSelector, useDispatch } from "react-redux"
+
+import Loader from "./_helpers/loader"
+
+const Login = Loadable({
+  loader: () => import("./components/login2"),
+  loading: Loader,
+  delay: 100,
+});
+
+const Signup = Loadable({
+  loader: () => import("./components/SignUp2"),
+  loading: Loader,
+  delay: 100,
+});
+
+const Dashboard = Loadable({
+  loader: () => import("./components/Dashboard"),
+  loading: Loader,
+  delay: 100,
+})
+
+function ProtectedRoute({ children, ...rest }) {
+  const isLoggedIn = true
+
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        isLoggedIn ? children : <Redirect to="/" />
+      }
+    />
+  );
+}
 
 class App extends Component {
   // state = {  }
@@ -50,16 +71,14 @@ class App extends Component {
             )}
 
               <Switch>
-                <PrivateRoute exact path="/" component={HomePage} />
-                <Route path="/login" component={log} />
-                <Route path="/signup" component={sign} />
-                <Route path="/dashboard" component={Dashboard} />
-                <Route path="/manage_ads" component={Dashboard} />
-                <Route exact path={"/advertForm"} component={Dashboard} />
-                <Route exact path={"/map"} component={AdvertMap} />
-                <Route exact path={"/ad"} component={AdvertForm5} />
-
-                <Route component={Dashboard} />
+                <PrivateRoute exact path="/" component={Login} />
+                <Route path="/login" component={Login} />
+                <Route path="/signup" component={Signup} />
+                <ProtectedRoute path="/dashboard">
+                  <Dashboard />
+                </ProtectedRoute>
+                {/* <Route path="/manage_ads" component={Dashboard} />
+                <Route component={Dashboard} /> */}
               </Switch>
             {/* </Router> */}
           </div>
@@ -78,4 +97,3 @@ const actionCreators = {
 
 const connectedApp = connect(mapState, actionCreators)(App);
 export { connectedApp as App };
-// export default App;
