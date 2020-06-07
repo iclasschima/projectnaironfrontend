@@ -1,16 +1,11 @@
 import React,{ Component } from "react";
-import AdvertNavBar from "../AdvertNavBar";
-import "../../advertBody.css";
-import arrowUp from "../../advertimages/Path 2arrup.svg"
-import arrowDown from "../../advertimages/Path 3arrdown.svg";
+import "./advertBody.css";
+import arrowUp from "./advertimages/Path 2arrup.svg";
+import arrowDown from "./advertimages/Path 3arrdown.svg";
 import MenuItem from "@material-ui/core/MenuItem";
-import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import Paper from '@material-ui/core/Paper';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-// import AdvertFooter from "../AdvertFooter"
+
 
 class AdvertForm3 extends Component{
 
@@ -74,11 +69,33 @@ class AdvertForm3 extends Component{
 
                                     <p>Age</p>
                                     <div className="ageSpace ageGroup d-flex">
+                                        <FormControl className="ageHeight" variant="filled">
+                                            <Select
+                                                labelId="demo-simple-select-filled-label"
+                                                id="demo-simple-select-filled"
+                                                displayEmpty
+                                                value={age1}
+                                                name="age1"
+                                                onChange={onChangeData('age1')}
+                                                renderValue={(selected) => {
+                                                    if (selected.length === 0) {
+                                                        return <em>18</em>;
+                                                    }
 
+                                                    return  selected;
+                                                }}
 
+                                            >
+                                                {age1dropdown.age1.map((option) => (
+                                                    <MenuItem  key={option} value={option}>
+                                                        {option}
+
+                                                    </MenuItem>
+                                                ))}
+                                            </Select>
+                                        </FormControl>
 
                                               <FormControl className="ageHeight" variant="filled">
-                                                {/*<InputLabel  id="demo-simple-select-filled-label">50</InputLabel>*/}
                                                 <Select
                                                     labelId="demo-simple-select-filled-label"
                                                     id="demo-simple-select-filled"

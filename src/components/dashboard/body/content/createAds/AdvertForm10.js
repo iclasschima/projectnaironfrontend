@@ -1,9 +1,9 @@
 import React,{ Component} from "react";
-import AdvertNavBar from "../AdvertNavBar";
-import "../../advertBody.css";
-import AdvertFooter from "../AdvertFooter"
-import cloth from "../../advertimages/Vectorcloth.svg";
-
+import "./advertBody.css";
+// import cloth from "../../advertimages/Vectorcloth.svg";
+import arrowUp from "./advertimages/Path 2arrup.svg";
+import arrowDown from "./advertimages/Path 3arrdown.svg";
+// import Vectorcloth from "../../../../../advertimages"
 
 
 // import AdvertiserHook from "../Hooks/AdvertiserHook"
@@ -22,6 +22,7 @@ class AdvertForm10 extends Component{
             // mediaType,
             // numberofPages,
             onChangeData,
+            onBack,
             onNext,
             
         }= this.props
@@ -29,8 +30,7 @@ class AdvertForm10 extends Component{
         return(
             
             <div>
-        
-                    <AdvertNavBar />
+
 
                     <div className="row">
 
@@ -53,14 +53,6 @@ class AdvertForm10 extends Component{
                                         {/* <hr className="fillform"/> */}
                                     </div>
 
-                                    <div>
-                                            {/* <p className="question2">{alldata[1].publisher}</p> */}
-                                            <p className="question2">Headline 2</p>
-
-                                        <input type="text" className="fillform"  value={publisher}></input>
-                                        {/* onChange={onChangeData('publisher')} */}
-                                        {/* <hr className="fillform"/> */}
-                                    </div>
 
                                     <div>
                                             {/* <p className="question2">{alldata[1].publisher}</p> */}
@@ -92,6 +84,16 @@ class AdvertForm10 extends Component{
                                     <div className="d-flex">
                                     <p  className="btn startbtn" onClick={onNext}>Next</p><p className="press">PressEnter</p>
                                     </div>
+
+
+                                        <div className="justify-content-end">
+                                            <div className=" arr  ">
+                                                <img onClick={onNext} className="arrnav" src={arrowUp} alt="arrow"/>
+                                            </div>
+                                            <div className=" arr  ">
+                                                <img onClick={onBack} className="arrnav" src={arrowDown} alt="arrow"/>
+                                            </div>
+                                        </div>
                                     
                                     
                                     </form>
@@ -101,33 +103,33 @@ class AdvertForm10 extends Component{
 
                         </div>
 
-                        <div className="col-md-4">
-                            <div className="card text-left w-20 advertcard ">
-                                <div className="card-body advertcardcontent infocard">
-                                    <p className="card-text adverinfotext"> There are 254,432 
-                                    possible audiences/customers in our network around you.</p>
-                                    <a href="/" className="btn gobtn">Get to them Now</a>
+                        {/*<div className="col-md-4">*/}
+                        {/*    <div className="card text-left w-20 advertcard ">*/}
+                        {/*        <div className="card-body advertcardcontent infocard">*/}
+                        {/*            <p className="card-text adverinfotext"> There are 254,432 */}
+                        {/*            possible audiences/customers in our network around you.</p>*/}
+                        {/*            <a href="/" className="btn gobtn">Get to them Now</a>*/}
 
-                                </div>
+                        {/*        </div>*/}
 
-                            </div> 
-                            <div className="card text-left  advertcard ">
-                                <div className="card-body advertcardpicture infocard">
-                                    <p>Sell clothes Online</p>
-                                    <img alt="Advert images" src={cloth}></img>
-                                    <p>Easy,Fast and Free to set up <br/>
-                                        Accept more forms of major Credit and Debit <br/>
-                                        www.nairon.com
-                                    </p>
+                        {/*    </div> */}
+                        {/*    <div className="card text-left  advertcard ">*/}
+                        {/*        <div className="card-body advertcardpicture infocard">*/}
+                        {/*            <p>Sell clothes Online</p>*/}
+                        {/*            <img alt="Advert images" src={cloth}></img>*/}
+                        {/*            <p>Easy,Fast and Free to set up <br/>*/}
+                        {/*                Accept more forms of major Credit and Debit <br/>*/}
+                        {/*                www.nairon.com*/}
+                        {/*            </p>*/}
 
-                                </div>
-                            </div>
+                        {/*        </div>*/}
+                        {/*    </div>*/}
 
-                        </div>
+                        {/*</div>*/}
 
                     </div>
 
-                    {/* <AdvertFooter /> */}
+
 
                 
             </div>

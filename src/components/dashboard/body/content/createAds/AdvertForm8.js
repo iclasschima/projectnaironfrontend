@@ -1,13 +1,10 @@
 import React,{ Component } from "react";
-import AdvertNavBar from "../AdvertNavBar";
-import "../../advertBody.css";
-import arrowUp from "../../advertimages/Path 2arrup.svg"
-import arrowDown from "../../advertimages/Path 3arrdown.svg"
+import "./advertBody.css";
+import arrowUp from "./advertimages/Path 2arrup.svg"
+import arrowDown from "./advertimages/Path 3arrdown.svg"
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
-
-// import AdvertFooter from "../AdvertFooter"
 
 class AdvertForm8 extends Component{
 

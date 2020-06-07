@@ -1,9 +1,7 @@
 import React from "react";
-import AdvertNavBar from "../AdvertNavBar";
-import "../../advertBody.css";
-import AdvertFooter from "../AdvertFooter"
-import arrowUp from "../../advertimages/Path 2arrup.svg"
-import arrowDown from "../../advertimages/Path 3arrdown.svg";
+import "./advertBody.css";
+import arrowUp from "./advertimages/Path 2arrup.svg";
+import arrowDown from "./advertimages/Path 3arrdown.svg";
 import AdvertiserHook from "./AdvertiserHook";
 
 
@@ -27,9 +25,6 @@ class AdvertForm1 extends AdvertiserHook{
         return(
 
             <div>
-        
-                    {/* <AdvertNavBar /> */}
-
 
                     <div className="row">
 
@@ -79,22 +74,11 @@ class AdvertForm1 extends AdvertiserHook{
 
                         </div>
 
-                        {/* <div className="col-md-4">
-                            <div className="card text-left w-20 advertcard ">
-                                <div className="card-body advertcardcontent infocard">
-                                    <p className="card-text adverinfotext"> There are 254,432 
-                                    possible audiences/customers in our network around you.</p>
-                                    <a href="/" className="btn gobtn">Get to them Now</a>
 
-                                </div>
 
-                            </div> 
-
-                        </div> */}
 
                     </div>
 
-                    {/* <AdvertFooter /> */}
 
                 
             </div>

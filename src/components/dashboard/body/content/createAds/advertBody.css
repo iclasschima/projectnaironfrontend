@@ -19,7 +19,7 @@ padding-right: 30px !important;
 }
 @media only screen and (max-width: 500px){
     .advertbodytext {
-        font-size: 5px;
+        font-size: 18px !important;
     }
     #map {
         width: auto  !important;
@@ -243,7 +243,7 @@ color: #2D2D2D;
   }
   .locfield{
       /* width: 50%; */
-      background: #F5F9FC;
+      background: transparent !important;
       border-left: none!important;
       border: 1px solid #2D2D2D;
   }

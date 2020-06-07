@@ -2,12 +2,12 @@ import React, { Component} from 'react';
 import AdvertiserHook from './AdvertiserHook';
 import AdvertForm1 from './AdvertForm1'
 import AdvertBody2 from './AdvertForm3'
-import arrowUp from "../../advertimages/Path 2arrup.svg"
-import arrowDown from "../../advertimages/Path 3arrdown.svg";
-import "../../advertBody.css";
+import arrowUp from "./advertimages/Path 2arrup.svg"
+import arrowDown from "./advertimages/Path 3arrdown.svg";
+import "./advertBody.css";
 import AdvertBody1 from './AdvertForm'
-import AdvertForm2 from '../advertForm/AdvertForm2'
-import AdvertForm3 from '../advertForm/AdvertForm3'
+import AdvertForm2 from './/AdvertForm2'
+import AdvertForm3 from './/AdvertForm3'
 import AdvertForm5 from "./AdvertForm5";
 import {Line} from "rc-progress";
 import AdvertForm4 from "./AdvertForm4";
@@ -15,6 +15,7 @@ import AdvertForm6 from "./AdvertForm6";
 import AdvertForm7 from "./AdvertForm7";
 import AdvertForm8 from "./AdvertForm8";
 import AdvertForm9 from "./AdvertForm9";
+import AdvertForm10 from "./AdvertForm10";
 
 
 
@@ -62,7 +63,7 @@ class Advert extends AdvertiserHook{
             <div>
 
                 <div className="pt-5">
-                    <h3>Line Progress {percent}%</h3>
+                    <h3 className="font-small font-weight-bold "> {percent}% completed </h3>
                     <div style={containerStyle}>
                         <Line percent={percent} strokeWidth="2" strokeColor={color} />
                         {/*<Line*/}
@@ -142,6 +143,15 @@ class Advert extends AdvertiserHook{
 
                         { this.state.page===9?< AdvertForm9 technologies={technologies}
                                                             techChoice={techChoice}
+                                                            onChangeData={this.onChangeData}
+                                                            onNext={this.onNext}
+                                                            onBack={this.onBack}
+
+                        />:""}
+
+
+                        { this.state.page===10?< AdvertForm10 name={name}
+                                                            // techChoice={techChoice}
                                                             onChangeData={this.onChangeData}
                                                             onNext={this.onNext}
                                                             onBack={this.onBack}

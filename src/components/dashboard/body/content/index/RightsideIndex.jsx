@@ -15,7 +15,7 @@ const Rightside = () => {
                 <div id="content">
                     <span>Recent Ad</span>
                     <p>You have 4 ads review</p>
-                    <Link to="/advertForm" className="btn">Create Ad</Link>
+                    <Link to="/" className="btn">Create Ad</Link>
                 </div>
             </RightSideStyled>
             

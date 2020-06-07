@@ -1,20 +1,11 @@
 import React,{ Component } from "react";
-import AdvertNavBar from "../AdvertNavBar";
-import "../../advertBody.css";
-import AdvertFooter from "../AdvertFooter";
-import TextField from "@material-ui/core/TextField";
-import MenuItem from "@material-ui/core/MenuItem";
-import InputLabel from '@material-ui/core/InputLabel';
-// import MenuItem from '@material-ui/core/MenuItem';
-// import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import arrowUp from "../../advertimages/Path 2arrup.svg";
-import arrowDown from "../../advertimages/Path 3arrdown.svg";
+import "./advertBody.css";
+import arrowUp from "./advertimages/Path 2arrup.svg";
+import arrowDown from "./advertimages/Path 3arrdown.svg";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
-// import { MDBSelect} from "mdbreact";
+
 
 
 class AdvertForm7 extends Component{

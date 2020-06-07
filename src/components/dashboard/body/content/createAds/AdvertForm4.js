@@ -1,15 +1,14 @@
 import React,{ Component } from "react";
-import AdvertNavBar from "../AdvertNavBar";
-import "../../advertBody.css";
-import arrowUp from "../../advertimages/Path 2arrup.svg"
-import arrowDown from "../../advertimages/Path 3arrdown.svg"
-import location from "../../advertimages/Path 6location.svg"
-import map from "../../advertimages/Rectangle 93map.svg"
-// import AdvertFooter from "../AdvertFooter"
+import "./advertBody.css";
+import arrowUp from "./advertimages/Path 2arrup.svg";
+import arrowDown from "./advertimages/Path 3arrdown.svg";
+import location from "./advertimages/Path 6location.svg"
+
 
 class AdvertForm4 extends Component{
 
     componentDidMount = () => {
+
 
         let map = new window.google.maps.Map(document.getElementById('map'), {
             center: {lat: 6.5244, lng: 3.3792},

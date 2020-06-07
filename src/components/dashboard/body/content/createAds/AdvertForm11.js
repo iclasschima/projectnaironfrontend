@@ -1,11 +1,11 @@
 import React,{ Component} from "react";
 import AdvertNavBar from "../AdvertNavBar";
-import "../../advertBody.css";
+import "./advertBody.css";
 import AdvertFooter from "../AdvertFooter"
-import cloth from "../../advertimages/Vectorcloth.svg";
-import single from "../../advertimages/Vectorsingle.svg";
-import video from "../../advertimages/Vectorvideo.png";
-import carosel from "../../advertimages/Vectorcarosel.svg";
+import cloth from "./advertimages/Vectorcloth.svg";
+import single from "./advertimages/Vectorsingle.svg";
+import video from "./advertimages/Vectorvideo.png";
+import carosel from "./advertimages/Vectorcarosel.svg";
 
 
 

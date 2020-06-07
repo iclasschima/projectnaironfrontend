@@ -1,7 +1,5 @@
 import React,{ Component} from "react";
-import AdvertNavBar from "../AdvertNavBar";
-import "../../advertBody.css";
-import AdvertFooter from "../AdvertFooter"
+import "./advertBody.css";
 // import AdvertiserHook from "../Hooks/AdvertiserHook"
 class AdvertForm extends Component{
     
@@ -86,7 +84,7 @@ class AdvertForm extends Component{
 
                     </div>
 
-                    {/* <AdvertFooter /> */}
+
 
                 
             </div>

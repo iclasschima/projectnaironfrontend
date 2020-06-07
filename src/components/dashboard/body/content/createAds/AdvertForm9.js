@@ -1,17 +1,13 @@
 import React,{ Component } from "react";
-import AdvertNavBar from "../AdvertNavBar";
-import "../../advertBody.css";
-import arrowUp from "../../advertimages/Path 2arrup.svg"
-import arrowDown from "../../advertimages/Path 3arrdown.svg"
-import {InputGroupRadio} from "react-bootstrap";
+import "./advertBody.css";
+import arrowUp from "./advertimages/Path 2arrup.svg"
+import arrowDown from "./advertimages/Path 3arrdown.svg"
 import RadioGroup from "@material-ui/core/RadioGroup";
 import Radio from "@material-ui/core/Radio";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
-
-// import AdvertFooter from "../AdvertFooter"
 
 class AdvertForm9 extends Component{
 
@@ -62,13 +58,13 @@ class AdvertForm9 extends Component{
                                     </div>
 
                                         {technologies==="Others" ?
-                                            <FormControl className="ageHeight " variant="filled">
+                                            <FormControl className="ml-5 w-75 " variant="filled">
 
                                                 <Select
                                                     labelId="demo-simple-select-filled-label"
                                                     id="demo-simple-select-filled"
                                                     value={techChoice}
-                                                    defaultValue="MTN"
+                                                    defaultValue="Spactranet Data"
                                                     name="tech"
 
 

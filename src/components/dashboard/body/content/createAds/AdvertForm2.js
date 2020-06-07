@@ -1,14 +1,13 @@
 import React from "react";
-import AdvertNavBar from "../AdvertNavBar";
-import "../../advertBody.css";
-import arrowUp from "../../advertimages/Path 2arrup.svg"
-import arrowDown from "../../advertimages/Path 3arrdown.svg";
+import "./advertBody.css";
+import arrowUp from "./advertimages/Path 2arrup.svg";
+import arrowDown from "./advertimages/Path 3arrdown.svg";
 import AdvertiserHook from "./AdvertiserHook";
 import Input from '@material-ui/core/Input';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import Checkbox from '@material-ui/core/Checkbox';
+
 
 class AdvertForm2 extends AdvertiserHook{
 
@@ -57,7 +56,7 @@ class AdvertForm2 extends AdvertiserHook{
                                     <div className="d-flex">
                                     <p className="want">I want to </p>
                                         <FormControl className="">
-                                            
+
                                             <Select
                                             // multiple
                                             displayEmpty
