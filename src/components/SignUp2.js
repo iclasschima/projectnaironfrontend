@@ -317,7 +317,10 @@ class SignUp extends React.Component {
               </Container>
             </div>
           </Container>
-          <footer className={classes.footer}>
+          <footer
+            className={classes.footer}
+            style={{ backgroundColor: "transparent" }}
+          >
             {/* <Grid container spacing={3}>
               <Grid item xs={9}>
                 <p>Privacy Policy</p>

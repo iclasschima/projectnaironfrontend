@@ -11,3 +11,12 @@
   text-decoration: none;
   border-bottom: #b670d3 0.125em solid;
 }
+
+#root {
+  /* background-color: ivory; */
+  background: radial-gradient(
+    113.39% 358% at 107.7% -4.17%,
+    #592e6a 0%,
+    #35203e 100%
+  );
+}
