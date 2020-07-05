@@ -25,7 +25,7 @@ function Section6() {
 
       <nav className="nav-menu-container">
         <ul className="nav-menu">
-          <li><Button variant="outline-info">Create account</Button>{' '}</li>
+          <li><button variant="outline-info">Create account</button>{' '}</li>
 
         </ul>
       </nav>
