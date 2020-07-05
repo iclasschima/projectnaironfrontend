@@ -4,7 +4,9 @@ import { Route, Switch, useRouteMatch } from "react-router-dom"
 import Loadable from "react-loadable"
 import Loader from "../../../_helpers/loader"
 
+
 import ContentSyle from "../styles/content"
+import Advert from "./content/createAds/Advert";
 
 
 
@@ -26,6 +28,12 @@ const Settings = Loadable({
     delay: 100
 })
 
+const CreateAds = Loadable({
+    loader: () => import("./content/createAds/Advert"),
+    loading: Loader,
+    delay:100
+})
+
 const Content = () => {
     let { path } = useRouteMatch();
 
@@ -35,7 +43,9 @@ const Content = () => {
                 <Route path={`${path}`} component={IndexPage} exact />
                 <Route path={`${path}/manage_ads`} component={ManageAds} />
                 <Route path={`${path}/settings`} component={Settings} />
-            </Switch>
+                <Route path={`${path}/create_ads`} component={Advert} />
+
+             </Switch>
         </ContentSyle>
     )
 }

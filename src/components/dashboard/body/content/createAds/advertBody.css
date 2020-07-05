@@ -1,0 +1,505 @@
+.advertcardcontent{
+    /*margin: auto !important;*/
+    background: #FFFFFF;
+box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+padding-left: 32% !important;
+padding-right: 30px !important;
+
+}
+.advertcardpicture{
+    background: white;
+}
+
+
+
+.advertcard{
+    /* background-color: red; */
+    border: none!important;
+    margin:auto !important;
+}
+@media only screen and (max-width: 500px){
+    .advertbodytext {
+        font-size: 18px !important;
+    }
+    #map {
+        width: auto  !important;
+    }
+    #input-group{
+        width: auto !important;
+    }
+    .radioRec{
+        width: auto !important;
+    }
+}
+#input-group{
+    width: 360px ;
+}
+
+
+.advertbodytext{
+font-family: IBM Plex Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 25px;
+margin-top: 60px!important;
+margin-bottom: 25px!important;
+/* identical to box height */
+clear: both;
+
+color: #2D2D2D;
+
+/* opacity: 0!important; */
+}
+.infocard{
+    margin-right: 50px;
+    /* padding-left: 50px; */
+}
+.gobtn{
+margin-bottom: 25px !important;
+background-color: #6FA8D3 !important;
+color: white !important;
+font-family: IBM Plex Sans !important;
+font-style: normal !important;
+font-weight: normal !important;
+font-size: 15.932px !important;
+line-height: 20px !important;
+}
+.fillform{
+    
+    margin-top: 15px;
+    margin-bottom: 5%;
+        /* border: 0; */
+     width: 40% !important;
+    border: none !important;
+    background: transparent !important;
+    border-bottom: 1px solid#444444 !important;
+    outline: none;
+
+      
+}
+.question{
+font-family: IBM Plex Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 15.9px;
+line-height: 20px;
+/* margin-top: 40px; */
+/* identical to box height */
+/* opacity: 0!important; */
+
+color: #2D2D2D;
+
+}
+
+.question2{
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15.9px;
+    line-height: 20px;
+    /* margin-top: 40px!important; */
+    /* identical to box height */
+    /* opacity: 0!important; */
+    
+    color: #2D2D2D;
+    
+    }
+.startbtn{
+    margin-top: 70px !important ;
+    background: #2D2D2D !important;
+    color: white !important;
+    margin-bottom: 5% !important;
+    border: 3px solid #B66FD3 !important;
+    font-family: IBM Plex Sans !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 24.399px !important;
+    line-height: 25px !important;
+    /* width: 10%; */
+    outline: none !important;
+    float: none!important;
+}.press{
+    margin-top: 78px !important ;
+    margin-left: 15px;
+}
+.want{
+    margin-top: 15px!important;
+    margin-right: 5px!important;
+
+}
+.ageSpace{
+    margin-bottom: 20%!important;
+}
+.advertfooter{
+    border: none!important;
+    /* width: 50rem; */
+    /* margin-top: 40px; */
+    margin-left: 30px;
+    margin-bottom: 5px;
+    margin-right: 30px;
+    height: 55px;
+
+}
+.lagRec {
+    height: 30px;
+    width: 55px;
+    /* background-color: #555; */
+    color: #6FA8D3;
+
+    border: 2px solid #6FA8D3;
+
+  }
+  .ageRec{
+    height: 35px;
+    width: 70px;
+      text-align: center;
+    /*margin-right: 15px;*/
+    padding-top: 7px;
+    /* background-color: #555; */
+    /* color: #6FA8D3; */
+
+      border: 1px solid #000000;
+  }
+  .ageGroup{
+      /* display: inline; */
+      float: left;
+      margin-right: 6px!important;
+  }
+  .ageText{
+      margin-left: 5px;
+  }
+  .loc{
+      padding-left: 7px;
+      padding-right: 7px;
+  }
+  .ageDash{
+      width: 10%;
+      order: 2px solid #000000!important;
+  }
+  .startfloat{
+    float: none!important;
+    clear: both;
+
+  }
+  .questionSlide{
+    width: 15%;
+    left: 55%;
+    position: relative;
+    margin-top: 30px;
+    height: 5px;
+    float: left;
+    display: flex;
+   
+  }
+  .questionPro{
+    background: #2D2D2D;
+  }
+  .arr{
+    height: 30px;
+    width: 40px;
+    margin-right: 5px;
+    
+    background-color: #2D2D2D;
+    /* color: #6FA8D3; */
+    display: flex;
+    float: left;
+    position: relative;
+    left:65% !important;
+    margin-top: 50px;
+    color: white;
+    justify-content: end !important;
+
+    border:  2px solid #B66FD3;
+  }
+  .complete{
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.181px;
+    line-height: 15px;
+    /* identical to box height */
+    
+    
+    color: #2D2D2D;
+    margin-top: 45px;
+    
+    opacity: 0.8;
+      margin-left: 50%;
+  }
+  .arrnav{
+      margin-top: 5px;
+      padding-left: 7px;
+      padding-right: 5px;
+  }
+  .input-group-text{
+      background: transparent!important;
+      background-color:  #F5F9FC!important;
+      /* border: none!important; */
+      outline: none!important;
+      border-right: 0px;
+      border: 1px solid #2D2D2D;
+      margin-bottom: 2px!important;
+  }
+  .locfield{
+      /* width: 50%; */
+      background: transparent !important;
+      border-left: none!important;
+      border: 1px solid #2D2D2D;
+  }
+
+  .fillformlong{
+    
+    /* margin-top: 15px; */
+    /* margin-bottom: 30px; */
+    /* border: 0; */
+    width: 50%;
+ border: none !important;
+background: transparent !important;
+border-bottom: 1px solid#444444 !important;
+outline: none;
+margin-top: 15px;
+margin-bottom: 20px;
+  
+}
+/* @media (min-width: @screen-sm-min){
+    width: 100%;
+} */
+@media (max-width: 768px) {
+     .carousel .picRec {
+        width: 100% !important;
+        overflow: hidden!important;
+        
+        clear: both;
+    }
+}
+
+@media (max-width:768px){
+    .fillform{
+        width: auto !important;
+    }
+}
+.radioRec{
+    height: 53px;
+    width: 320px;
+    margin-bottom: 5px;
+    border:  2px solid #2D2D2D;
+  }
+  .picRec{
+    height: 193px;
+    width: 250px;
+    margin-bottom: 10px;
+    border: 1px solid #444444;
+    margin-right: 7px !important;
+  }
+  .carousel{
+      margin-top: 40px;
+      margin-left: 45px;
+  }
+  /* .ageRec{
+    height: 23px;
+    width: 100px;
+    margin-bottom: 10px;
+    border:  2px solid #2D2D2D;
+  } */
+
+  
+  #auto{
+      margin-right: 30px;
+      margin-top: 10px;
+      margin-left: 25px;
+      margin-bottom: 18px;
+    
+  }
+
+  .autoText{
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 32px;
+    /* margin-top: 5px; */
+    margin-right: 20px;
+    margin-bottom: 10px;
+    /* identical to box height */
+    
+    
+    color: #2D2D2D;
+  }
+
+  
+.recommend{
+font-family: IBM Plex Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 8px;
+line-height: 10px;
+margin-left: 80px;
+color: #B66FD3;
+padding-bottom: 0px!important;
+}
+
+/*input[type='radio'] .PrivateSwitchBase-input-92 :after {*/
+/*    width: 15px;*/
+/*    height: 15px;*/
+/*    border-radius: 15px;*/
+/*    top: -2px;*/
+/*    left: -1px;*/
+/*    position: relative;*/
+/*    background-color: #F5F9FC;*/
+/*    content: '';*/
+/*    display: inline-block;*/
+/*    visibility: visible;*/
+/*    border: 1px solid black;*/
+/*}*/
+
+/*input[type='radio'] .PrivateSwitchBase-input-92:checked:after {*/
+/*    width: 15px;*/
+/*    height: 15px;*/
+/*    border-radius: 15px;*/
+/*    top: -2px;*/
+/*    left: -1px;*/
+/*    position: relative;*/
+/*    background-color: black;*/
+/*    content: '';*/
+/*    display: inline-block;*/
+/*    visibility: visible;*/
+/*    border: 2px solid  #B66FD3;*/
+/*}*/
+.MuiSvgIcon-root {
+    fill: #B66FD3 !important;
+}
+
+.MuiFormControl-root {
+    width: 230px;
+}
+
+
+.MuiFilledInput-root{
+    background-color: transparent !important;
+    border: 0.5px solid #7C7C7C;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    height: 40px !important;
+
+}
+
+.ageHeight{
+    width:  90%!important;
+    height: 10px!important;
+    margin-right: 10px!important;
+}
+
+.MuiFilledInput-underline:hover:before {
+    border-bottom: 0px solid rgba(0, 0, 0, 0.87);
+}
+
+.MuiFilledInput-underline:after  {
+    color: #000;
+
+    border-bottom: 0px solid rgba(0, 0, 0, 0.87) !important;
+}
+
+.MuiFilledInput-underline:before  {
+    color: #000;
+
+    border-bottom: 0px solid rgba(0, 0, 0, 0.87) !important;
+}
+
+.MuiInputLabel-filled {
+    z-index: 1;
+    transform: translate(14px, 12px) scale(1)!important;
+    pointer-events: none;
+}
+
+
+.MuiFormLabel-root {
+    color: #000000;
+}
+
+.MuiSelect-select.MuiSelect-select {
+    /* padding-right: 24px; */
+    margin-bottom: 10px;
+    background-color: transparent !important;
+
+}
+/*Map */
+#map {
+    height: 250px;
+    width: 360px;
+}
+
+
+
+
+#description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+#infowindow-content .title {
+    font-weight: bold;
+}
+
+#infowindow-content {
+    display: none;
+}
+
+#map #infowindow-content {
+    display: inline;
+}
+
+.pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto;
+}
+
+#pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+}
+
+.pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+}
+
+.pac-controls label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 5px 11px 5px 13px;
+    text-overflow: ellipsis;
+    width: 360px;
+    border-bottom: 1px solid #444444;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+}
+
+#title {
+    color: #fff;
+    background-color: #4d90fe;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 12px;
+}
