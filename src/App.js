@@ -14,7 +14,7 @@ import { alertActions } from "./_actions";
 import { PrivateRoute } from "./_components";
 // import { HomePage } from "./components/Homepage";
 import { connect } from "react-redux";
-
+// import securedRoutes from "./secureRoutes"
 import { useSelector, useDispatch } from "react-redux"
 
 import Loader from "./_helpers/loader"
@@ -33,6 +33,12 @@ const Signup = Loadable({
 
 const Dashboard = Loadable({
   loader: () => import("./components/Dashboard"),
+  loading: Loader,
+  delay: 100,
+})
+
+const HomePage = Loadable({
+  loader: () => import("./components/HomePage"),
   loading: Loader,
   delay: 100,
 })
@@ -71,8 +77,8 @@ class App extends Component {
             )}
 
               <Switch>
-                <PrivateRoute exact path="/" component={Login} />
-                <Route path="/login" component={Login} />
+                {/* <PrivateRoute exact path="/" component={HomePage} /> */}
+                <Route path="/" exact component={HomePage} />
                 <Route path="/signup" component={Signup} />
                 <ProtectedRoute path="/dashboard">
                   <Dashboard />

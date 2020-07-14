@@ -11,8 +11,8 @@ const Dashboard = () => {
     const [sideNav, showSideNav] = useState(false)
 
     const theme = {
-        primaryColor: "#B66FD3",
-        secondaryColor: "#2D2D2D",
+        primaryColor: "#0F52BA",
+        secondaryColor: "#0F52BA",
         mdFontSize: "13px"
     }
 

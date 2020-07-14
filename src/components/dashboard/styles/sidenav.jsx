@@ -4,7 +4,7 @@ export default styled.div`
     font-size: ${props => props.theme.mdFontSize};
     font-family: 'Fira Sans', sans-serif;
     position: fixed;
-    background-color: #3C154B;
+    background-color: #0F52BA;
     min-height: 100%;
     width: 16rem;
     transition: ease-in .3s;
@@ -20,7 +20,9 @@ export default styled.div`
     #top_header {
         padding: 0.56rem;
         text-align: center;
-        background-color: #5E2D70; 
+        background-color: #0F52BA; 
+        height: 2.5rem !important;
+        line-height: 2.2rem;
         span {
             color: #fff;
             font-size: 20px;
@@ -40,7 +42,7 @@ export default styled.div`
                 color: #fff;
                 opacity: 0.65;
                 border-left: 2px solid #2D2D2D;     
-                font-weight: 500;
+                font-weight: 700;
                 svg {
                     margin-right: 6%;
                     font-size: 1rem;
@@ -49,7 +51,7 @@ export default styled.div`
                         margin-left: -2px !important;
                     }
                 }&.active {
-                    background-color: #5E2D70;
+                    background-color: #4D8AF0;
                     border-left: 2px solid #fff !important;
                     color: #fff;
                     opacity: 1;
@@ -58,7 +60,8 @@ export default styled.div`
                     border-left: 2px solid #5E2D70;
                     text-decoration: none;
                     transition: ease all .6s;
-                    background-color: #5E2D70;
+                    background-color: #4D8AF0;
+                    color: #fff;
                 }
                 
             }
@@ -73,7 +76,7 @@ export default styled.div`
     #status_div {
         padding: 0 2rem;
         h6 {
-            color: #ABABAB;
+            color: #fff;
             font-weight: 400;
             font-size: 13px;
         }

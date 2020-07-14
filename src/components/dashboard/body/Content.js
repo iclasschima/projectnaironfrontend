@@ -6,7 +6,7 @@ import Loader from "../../../_helpers/loader"
 
 
 import ContentSyle from "../styles/content"
-import Advert from "./content/createAds/Advert";
+// import Advert from "./content/createAds/Advert";
 
 
 
@@ -29,7 +29,7 @@ const Settings = Loadable({
 })
 
 const CreateAds = Loadable({
-    loader: () => import("./content/createAds/Advert"),
+    loader: () => import("./content/createAds/CreateAds"),
     loading: Loader,
     delay:100
 })
@@ -41,10 +41,9 @@ const Content = () => {
         <ContentSyle className="container-fluid">
              <Switch>
                 <Route path={`${path}`} component={IndexPage} exact />
-                <Route path={`${path}/manage_ads`} component={ManageAds} />
+                <Route path={`${path}/manage-ads`} component={ManageAds} />
                 <Route path={`${path}/settings`} component={Settings} />
-                <Route path={`${path}/create_ads`} component={Advert} />
-
+                <Route path={`${path}/create-ads`} component={CreateAds} />
              </Switch>
         </ContentSyle>
     )

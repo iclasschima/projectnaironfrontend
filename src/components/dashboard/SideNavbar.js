@@ -19,7 +19,7 @@ const SideNavbar = ({sideNav, showSideNav}) => {
         <SidenavStyle show={sideNav}>
 
             <div id="top_header">
-                <span>nairon</span>
+                <span>yconnector</span>
                 
             </div>
 
@@ -52,15 +52,15 @@ const Ul = ({sideNav, showSideNav}) => {
             </li>
             <li>
                 <Link 
-                    to={`${url}/create_ads`} 
-                    className={pathname === `${url}/create_ads` ? "active" : ""}>
+                    to={`${url}/create-ads`} 
+                    className={pathname === `${url}/create-ads` ? "active" : ""}>
                     <AiFillNotification /> Create Ads
                 </Link>
             </li>
             <li>
                 <Link 
-                     to={`${url}/manage_ads`} 
-                    className={pathname === `${url}/manage_ads` ? "active" : ""}>
+                     to={`${url}/manage-ads`} 
+                    className={pathname === `${url}/manage-ads` ? "active" : ""}>
                     <AiTwotoneSetting /> Manage Ads
                 </Link>
             </li>

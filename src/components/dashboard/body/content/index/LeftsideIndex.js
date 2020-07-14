@@ -38,13 +38,13 @@ const Leftside = () => {
                     230,
                     130
                 ],
-                backgroundColor: "#C999DF"
+                backgroundColor: "#4D8AF0"
             }
         ]
     })
 
     const getValue = (e, {value}) => {
-        //T o get the value of the dropdown
+        //To get the value of the dropdown
     }
     
     return  (

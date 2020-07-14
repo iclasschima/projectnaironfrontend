@@ -26,7 +26,7 @@ const TopNavbar = ({sideNav, showSideNav}) => {
         case `${path}/manage_ads`:
             header = "Manage Ads"
             break;
-        case `${path}/create_ads`:
+        case `${path}/create-ads`:
             header = "Create Ads"
             break;
         case `${path}/settings`:
