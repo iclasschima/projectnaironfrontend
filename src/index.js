@@ -14,7 +14,7 @@ import { store } from "./_helpers";
 ReactDOM.render(
   <Provider store={store}>
     {" "}
-    <App />,
+    <App />
   </Provider>,
   document.getElementById("root")
 );

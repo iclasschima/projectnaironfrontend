@@ -148,8 +148,6 @@ class SignUp extends React.Component {
         <div className={classes.root}>
           <Container
             component="main"
-            // style={{ backgroundColor: "red" }}
-            maxWidth="xl"
           >
             <div className={classes.paper}>
               {/* <h1>this text will auto size with the screen</h1> */}

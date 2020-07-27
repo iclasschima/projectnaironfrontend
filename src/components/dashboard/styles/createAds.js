@@ -5,14 +5,15 @@ export default styled.div`
   padding: 5rem 0 0 0;
 
   .MuiFormControl-root {
-      width: 90%;
-      &.form {
-        margin: 15% auto;
-      }
+    width: 90%;
+    &.form {
+      margin: 17% auto;
+    }
   }
 
-  .MuiOutlinedInput-root, .MuiInputLabel-root {
-    margin-bottom: 1rem !important;
+  .MuiOutlinedInput-root,
+  .MuiInputLabel-root {
+    margin-bottom: 0rem !important;
     font-weight: 300 !important;
     font-family: "Fira Sans", sans-serif;
   }
@@ -27,18 +28,18 @@ export default styled.div`
     font-size: 1.7rem;
     line-height: 4rem;
     font-family: "Fira Sans", sans-serif;
-    font-weight: 500
+    font-weight: 500;
   }
 
   .ad-card {
-      width: 80%;
-      margin: auto;
-      background-color: red;
-      height: 80%;
+    width: 80%;
+    margin: auto;
+    background-color: red;
+    height: 80%;
   }
   .card {
     font-family: "Fira Sans", sans-serif !important;
-    margin: 20% auto
+    margin: 20% auto;
   }
 
   .MuiCard-root {
@@ -51,4 +52,23 @@ export default styled.div`
     width: 90%;
     margin: 50% auto 0 !important;
   }
-`
+
+  .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]
+    .MuiAutocomplete-endAdornment {
+    right: 30% !important;
+    top: 10%;
+  }
+
+  .MuiIconButton-label {
+    width: 100%;
+    display: flex;
+    align-items: inherit;
+    justify-content: inherit;
+    top: -80%;
+    position: absolute;
+  }
+
+  .MuiButtonBase-root {
+    margin-bottom: 1rem !important;
+  }
+`;
