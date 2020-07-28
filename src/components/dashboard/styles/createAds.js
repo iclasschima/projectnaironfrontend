@@ -5,7 +5,7 @@ export default styled.div`
   padding: 5rem 0 0 0;
 
   .MuiFormControl-root {
-    width: 90%;
+    /* width: 90%; */
     &.form {
       margin: 17% auto;
     }
@@ -18,7 +18,7 @@ export default styled.div`
     font-family: "Fira Sans", sans-serif;
   }
 
-  .MuiButtonBase-root {
+  .form > .MuiButtonBase-root {
     height: 3.3rem;
     font-family: "Fira Sans", sans-serif;
     width: 90%;
@@ -53,22 +53,32 @@ export default styled.div`
     margin: 50% auto 0 !important;
   }
 
-  .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]
+  .MuiButton-outlined[class*="MuiOutlinedInput-root"]
     .MuiAutocomplete-endAdornment {
     right: 30% !important;
     top: 10%;
   }
 
-  .MuiIconButton-label {
+  /* .MuiIconButton-label {
     width: 100%;
     display: flex;
     align-items: inherit;
     justify-content: inherit;
     top: -80%;
     position: absolute;
+  } */
+
+  .MuiButton-outlined {
+    margin-bottom: 1rem !important;
   }
 
-  .MuiButtonBase-root {
-    margin-bottom: 1rem !important;
+  .col-6 {
+    button {
+      height: 3rem !important;
+      &.next {
+        background-color: #2b52ba;
+        color: #fff
+      }
+    }
   }
 `;
