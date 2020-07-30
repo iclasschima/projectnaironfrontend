@@ -26,9 +26,9 @@ export default styled.div`
 
   h3 {
     font-size: 1.7rem;
-    line-height: 4rem;
     font-family: "Fira Sans", sans-serif;
     font-weight: 500;
+    margin-bottom: 1.5rem;
   }
 
   .ad-card {
@@ -59,14 +59,20 @@ export default styled.div`
     top: 10%;
   }
 
-  /* .MuiIconButton-label {
-    width: 100%;
-    display: flex;
-    align-items: inherit;
-    justify-content: inherit;
-    top: -80%;
-    position: absolute;
-  } */
+  .cashout-icons {
+    border-radius: 100% 50% 50% 100% !important;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    margin-bottom: 25px;
+    font-size: 38px;
+    line-height: 100px;
+    color: #333357;
+    background: #f2f3f8;
+    border: 1px solid #eee;
+  }
 
   .MuiButton-outlined {
     margin-bottom: 1rem !important;
@@ -77,7 +83,7 @@ export default styled.div`
       height: 3rem !important;
       &.next {
         background-color: #2b52ba;
-        color: #fff
+        color: #fff;
       }
     }
   }

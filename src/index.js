@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // import "./index.css";
-import { App } from "./App";
+import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 // import Login from "./login";
 import "bootstrap/dist/css/bootstrap.css";
@@ -13,7 +13,6 @@ import { store } from "./_helpers";
 
 ReactDOM.render(
   <Provider store={store}>
-    {" "}
     <App />
   </Provider>,
   document.getElementById("root")

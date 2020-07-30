@@ -5,7 +5,9 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import FormControl from "@material-ui/core/FormControl";
 import { makeStyles } from "@material-ui/core/styles";
+import moment from "moment"
 import clsx from "clsx";
+import GoogleMapReact from "google-map-react";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -18,6 +20,8 @@ import RoomOutlinedIcon from "@material-ui/icons/RoomOutlined";
 import Typography from "@material-ui/core/Typography";
 import Skeleton from "@material-ui/lab/Skeleton";
 import Box from "@material-ui/core/Box";
+import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
+import CreditCardIcon from "@material-ui/icons/CreditCard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,6 +78,24 @@ export default function CreateAds() {
 
       case 7:
         return <FormSeven handleChange={handleChange} setStep={setStep} />;
+
+      case 8:
+        return <FormEight handleChange={handleChange} setStep={setStep} />;
+
+      case 9:
+        return <FormNine handleChange={handleChange} setStep={setStep} />;
+
+      case 10:
+        return <FormTen handleChange={handleChange} setStep={setStep} />;
+
+      case 11:
+        return <FormEleven handleChange={handleChange} setStep={setStep} />;
+
+      case 12:
+        return <FormTwelve handleChange={handleChange} setStep={setStep} />;
+
+      case 13:
+        return <Checkout />;
 
       default:
         return <FormOne handleChange={handleChange} setStep={setStep} />;
@@ -139,7 +161,7 @@ export default function CreateAds() {
   );
 }
 
-const Buttons = ({ next, prev, setStep }) => {
+const Buttons = ({ next, prev, setStep, end=false }) => {
   return (
     <>
       <div className="col-6">
@@ -159,7 +181,7 @@ const Buttons = ({ next, prev, setStep }) => {
           fullWidth
           onClick={() => setStep(next)}
         >
-          NEXT
+          {end ? "DONE" : "NEXT"}
         </Button>
       </div>
     </>
@@ -187,6 +209,18 @@ const FormOne = ({ handleChange, setStep }) => {
             onChange={handleChange}
           />
         </div>
+
+        <div className="col-12">
+          <TextField
+            name="website"
+            label="Website"
+            variant="outlined"
+            size="medium"
+            fullWidth
+            onChange={handleChange}
+          />
+        </div>
+
         <div className="offset-6 col-6">
           <Button
             variant="outlined"
@@ -247,70 +281,93 @@ const FormThree = ({ handleChange, setStep }) => {
   for (let age = 18; age <= 70; age++) ages.push({ id: age, value: age });
 
   return (
-    <FormControl className="form">
+    <FormControl className="form container">
       <h3>Who do you want to view this advert?</h3>
-      <TextField select label="Gender" variant="outlined">
-        {genders.map((gender) => (
-          <MenuItem key={gender.id} value={gender.value}>
-            {gender.value}
-          </MenuItem>
-        ))}
-      </TextField>
-      <p>Select age range</p>
       <div className="row">
-        <div className="col-6 pr-0">
-          <TextField select label="From" variant="outlined">
-            {ages.map((age) => (
-              <MenuItem key={age.id} value={age.value}>
-                {age.value}
+        <div className="col-12">
+          <TextField select label="Gender" fullWidth variant="outlined">
+            {genders.map((gender) => (
+              <MenuItem key={gender.id} value={gender.value}>
+                {gender.value}
               </MenuItem>
             ))}
           </TextField>
+        </div>
+        <div className="col-12 row pr-0">
+          <p className="col-12">Select age range</p>
+
+          <div className="col-6 pr-0">
+            <TextField select label="From" fullWidth variant="outlined">
+              {ages.map((age) => (
+                <MenuItem key={age.id} value={age.value}>
+                  {age.value}
+                </MenuItem>
+              ))}
+            </TextField>
+          </div>
+
+          <div className="col-6 pr-0">
+            <TextField select label="To" fullWidth variant="outlined">
+              {ages.map((age) => (
+                <MenuItem key={age.id} value={age.value}>
+                  {age.value}
+                </MenuItem>
+              ))}
+            </TextField>
+          </div>
         </div>
 
-        <div className="col-5 pl-0 pr-0">
-          <TextField select label="To" variant="outlined" fullWidth>
-            {ages.map((age) => (
-              <MenuItem key={age.id} value={age.value}>
-                {age.value}
-              </MenuItem>
-            ))}
-          </TextField>
-        </div>
+        <Buttons next={4} prev={2} setStep={setStep} />
       </div>
-
-      <Button variant="outlined" color="primary" onClick={() => setStep(4)}>
-        NEXT
-      </Button>
-      <Button variant="outlined" color="primary" onClick={() => setStep(2)}>
-        BACK
-      </Button>
     </FormControl>
   );
 };
 
-const FormFour = ({ handleChange, setStep }) => {
-  return (
-    <FormControl className="form">
-      <h3>Where are your customers?</h3>
-      <TextField
-        label="Specific Area"
-        variant="outlined"
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <RoomOutlinedIcon />
-            </InputAdornment>
-          ),
-        }}
-      />
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-      <Button variant="outlined" color="primary" onClick={() => setStep(5)}>
-        NEXT
-      </Button>
-      <Button variant="outlined" color="primary" onClick={() => setStep(3)}>
-        BACK
-      </Button>
+const FormFour = ({ handleChange, setStep }) => {
+  const center = {
+    lat: 59.95,
+    lng: 30.33,
+  };
+
+  return (
+    <FormControl className="form conatiner">
+      <h3>Where are your customers?</h3>
+      <div className="row">
+        <div className="col-12">
+          <TextField
+            label="Specific Area"
+            variant="outlined"
+            fullWidth
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <RoomOutlinedIcon />
+                </InputAdornment>
+              ),
+            }}
+          />
+        </div>
+
+        <div className="col-12 pb-4" style={{ height: "20vh", width: "100%" }}>
+          <GoogleMapReact
+            bootstrapURLKeys={{
+              key: "AIzaSyCRz96-v-28BYoKRHJ8GPW0ExGzrV8Gx78",
+            }}
+            defaultCenter={center}
+            defaultZoom="1"
+          >
+            <AnyReactComponent
+              lat={59.955413}
+              lng={30.337844}
+              text="My Marker"
+            />
+          </GoogleMapReact>
+        </div>
+
+        <Buttons next={5} prev={3} setStep={setStep} />
+      </div>
     </FormControl>
   );
 };
@@ -336,50 +393,51 @@ const FormFive = ({ handleChange, setStep }) => {
     setplacement(e.target.value);
   };
 
-  const handlePlacementChange = (e) => {
-    console.log(e.target);
-  };
-
   useEffect(() => {
     if (placement !== "Manual Placement") setDisabled(true);
     else setDisabled(false);
   }, [placement]);
 
   return (
-    <FormControl className="form">
+    <FormControl className="form container">
       <h3>Where do you want your advert to appear?</h3>
-      <TextField
-        id="filled-select-currency"
-        select
-        label="Select Placement Type"
-        variant="outlined"
-        value={placement}
-        onChange={handleSelectChange}
-      >
-        {goals.map((goal) => (
-          <MenuItem key={goal.id} value={goal.value}>
-            {goal.value}
-          </MenuItem>
-        ))}
-      </TextField>
+      <div className="row">
+        <div className="col-12">
+          <TextField
+            id="filled-select-currency"
+            select
+            label="Select Placement Type"
+            variant="outlined"
+            value={placement}
+            fullWidth
+            onChange={handleSelectChange}
+          >
+            {goals.map((goal) => (
+              <MenuItem key={goal.id} value={goal.value}>
+                {goal.value}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
 
-      <Autocomplete
-        options={platforms}
-        disabled={disabled}
-        onChange={(event, value) => console.log(value)}
-        multiple
-        getOptionLabel={(option) => option.title}
-        renderInput={(params) => (
-          <TextField {...params} label="Select Placement" variant="outlined" />
-        )}
-      />
-
-      <Button variant="outlined" color="primary" onClick={() => setStep(6)}>
-        NEXT
-      </Button>
-      <Button variant="outlined" color="primary" onClick={() => setStep(4)}>
-        BACK
-      </Button>
+        <div className="col-12">
+          <Autocomplete
+            options={platforms}
+            disabled={disabled}
+            onChange={(event, value) => console.log(value)}
+            multiple
+            getOptionLabel={(option) => option.title}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Select Placement"
+                variant="outlined"
+              />
+            )}
+          />
+        </div>
+        <Buttons next={6} prev={4} setStep={setStep} />
+      </div>
     </FormControl>
   );
 };
@@ -388,7 +446,7 @@ const FormSix = ({ handleChange, setStep }) => {
   const [ISP, setISP] = useState("All ISP Technologies");
   const [disabled, setDisabled] = useState(true);
 
-  const goals = [
+  const methods = [
     { id: 1, value: "All ISP Technologies" },
     { id: 2, value: "Others" },
   ];
@@ -411,40 +469,45 @@ const FormSix = ({ handleChange, setStep }) => {
   }, [ISP]);
 
   return (
-    <FormControl className="form">
+    <FormControl className="form container">
       <h3>ISP Technologies</h3>
-      <TextField
-        id="filled-select-currency"
-        select
-        label="Select Provider"
-        variant="outlined"
-        value={ISP}
-        onChange={handleSelectChange}
-      >
-        {goals.map((goal) => (
-          <MenuItem key={goal.id} value={goal.value}>
-            {goal.value}
-          </MenuItem>
-        ))}
-      </TextField>
+      <div className="row">
+        <div className="col-12">
+          <TextField
+            id="filled-select-currency"
+            select
+            label="Select Method"
+            variant="outlined"
+            value={ISP}
+            fullWidth
+            onChange={handleSelectChange}
+          >
+            {methods.map((method) => (
+              <MenuItem key={method.id} value={method.value}>
+                {method.value}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
 
-      <Autocomplete
-        options={isps}
-        disabled={disabled}
-        onChange={(event, value) => console.log(value)}
-        multiple
-        getOptionLabel={(option) => option.title}
-        renderInput={(params) => (
-          <TextField {...params} label="Select Placement" variant="outlined" />
-        )}
-      />
-
-      <Button variant="outlined" color="primary" onClick={() => setStep(7)}>
-        NEXT
-      </Button>
-      <Button variant="outlined" color="primary" onClick={() => setStep(5)}>
-        BACK
-      </Button>
+        <div className="col-12">
+          <Autocomplete
+            options={isps}
+            disabled={disabled}
+            onChange={(event, value) => console.log(value)}
+            multiple
+            getOptionLabel={(option) => option.title}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Select Technology"
+                variant="outlined"
+              />
+            )}
+          />
+        </div>
+        <Buttons next={7} prev={5} setStep={setStep} />
+      </div>
     </FormControl>
   );
 };
@@ -459,24 +522,396 @@ const FormSeven = ({ handleChange, setStep }) => {
   ];
 
   return (
-    <FormControl className="form">
+    <FormControl className="form container">
       <h3>Set Up Categories</h3>
-      <Autocomplete
-        options={categories}
-        onChange={(event, value) => console.log(value)}
-        multiple
-        getOptionLabel={(option) => option.title}
-        renderInput={(params) => (
-          <TextField {...params} label="Select Placement" variant="outlined" />
-        )}
-      />
       <div className="row">
-        <Button variant="outlined" color="primary" onClick={() => setStep(6)}>
-          NEXT
-        </Button>
-        <Button variant="outlined" color="primary" onClick={() => setStep(6)}>
-          BACK
-        </Button>
+        <div className="col-12">
+          <Autocomplete
+            options={categories}
+            onChange={(event, value) => console.log(value)}
+            multiple
+            getOptionLabel={(option) => option.title}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Select Categories"
+                variant="outlined"
+              />
+            )}
+          />
+        </div>
+        <Buttons next={8} prev={6} setStep={setStep} />
+      </div>
+    </FormControl>
+  );
+};
+
+const FormEight = ({ handleChange, setStep }) => {
+  const [device, setDevice] = useState("All devices (Mobile & Desktop)");
+  const [disabled, setDisabled] = useState(true);
+
+  const devices = [
+    { id: 1, value: "All devices (Mobile & Desktop)" },
+    { id: 2, value: "Mobile devices only" },
+    { id: 2, value: "Desktop devices only" },
+  ];
+
+  const mobile = [
+    { title: "Andriod", value: "andriod" },
+    { title: "IOS", value: "ios" },
+  ];
+
+  const mobileModels = [
+    { title: "Apple", value: "apple" },
+    { title: "Samsung", value: "samsung" },
+    { title: "Oppo", value: "oppo" },
+    { title: "Lenovo", value: "lenovo" },
+    { title: "Huawei", value: "huawei" },
+    { title: "LG", value: "lg" },
+    { title: "Xiaomi", value: "xiaomi" },
+    { title: "Vivo", value: "vivo" },
+  ];
+
+  const desktop = [
+    { title: "Windows", value: "windows" },
+    { title: "MacOS", value: "macos" },
+    { title: "Linux", value: "linux" },
+  ];
+
+  const desktopModels = [
+    { title: "HP", value: "hp" },
+    { title: "Samsung", value: "samsung" },
+    { title: "Dell", value: "dell" },
+    { title: "Lenovo", value: "lenovo" },
+    { title: "Asus", value: "asus" },
+    { title: "MacBook", value: "macbook" },
+    { title: "Acer", value: "acer" },
+  ];
+
+  const handleSelectChange = (e) => {
+    setDevice(e.target.value);
+  };
+
+  useEffect(() => {
+    if (device === "All devices (Mobile & Desktop)") setDisabled(true);
+    else setDisabled(false);
+  }, [device]);
+
+  return (
+    <FormControl className="form container">
+      <h3>Select preferred devices</h3>
+      <div className="row">
+        <div className="col-12">
+          <TextField
+            select
+            label="Select Provider"
+            variant="outlined"
+            value={device}
+            fullWidth
+            onChange={handleSelectChange}
+          >
+            {devices.map((device) => (
+              <MenuItem key={device.id} value={device.value}>
+                {device.value}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
+
+        <div className="col-12">
+          <Autocomplete
+            options={device === "Mobile devices only" ? mobile : desktop}
+            disabled={disabled}
+            onChange={(event, value) => console.log(value)}
+            multiple
+            getOptionLabel={(option) => option.title}
+            renderInput={(params) => (
+              <TextField {...params} label="Select OS" variant="outlined" />
+            )}
+          />
+        </div>
+
+        <div className="col-12">
+          <Autocomplete
+            options={
+              device === "Mobile devices only" ? mobileModels : desktopModels
+            }
+            disabled={disabled}
+            onChange={(event, value) => console.log(value)}
+            multiple
+            getOptionLabel={(option) => option.title}
+            renderInput={(params) => (
+              <TextField {...params} label="Select Model" variant="outlined" />
+            )}
+          />
+        </div>
+
+        <Buttons next={9} prev={7} setStep={setStep} />
+      </div>
+    </FormControl>
+  );
+};
+
+const FormNine = ({ handleChange, setStep }) => {
+  const options = [
+    { id: 1, value: "Image" },
+    { id: 2, value: "Slides" },
+    { id: 3, value: "Video" },
+  ];
+
+  return (
+    <FormControl className="form container">
+      <h3>Headline and Description</h3>
+      <div className="row">
+        <div className="col-12">
+          <TextField
+            id="filled-select-currency"
+            select
+            label="Headline"
+            variant="outlined"
+            fullWidth
+          />
+        </div>
+
+        <div className="col-12">
+          <TextField
+            id="filled-select-currency"
+            label="Description 1"
+            variant="outlined"
+            multiline
+            rows="2"
+            fullWidth
+          />
+        </div>
+
+        <div className="col-12">
+          <TextField
+            id="filled-select-currency"
+            label="Description 2"
+            variant="outlined"
+            multiline
+            rows="2"
+            fullWidth
+          />
+        </div>
+
+        <Buttons next={10} prev={8} setStep={setStep} />
+      </div>
+    </FormControl>
+  );
+};
+
+const FormTen = ({ handleChange, setStep }) => {
+  const types = [
+    { title: "Slide", value: "slide" },
+    { title: "Image", value: "image" },
+    { title: "Video", value: "video" },
+  ];
+  return (
+    <FormControl className="form container">
+      <h3>Upload Media</h3>
+      <div className="row">
+        <div className="col-12">
+          <TextField
+            id="filled-select-currency"
+            select
+            label="Select Advert Goal"
+            variant="outlined"
+            fullWidth
+          >
+            {types.map((type) => (
+              <MenuItem key={type.id} value={type.value}>
+                {type.value}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
+
+        <div className="col-12">
+          <TextField
+            id="filled-select-currency"
+            variant="outlined"
+            type="file"
+            fullWidth
+          />
+        </div>
+
+        <div className="col-12">
+          <TextField
+            id="filled-select-currency"
+            variant="outlined"
+            type="file"
+            fullWidth
+          />
+        </div>
+
+        <Buttons next={11} prev={9} setStep={setStep} />
+      </div>
+    </FormControl>
+  );
+};
+
+const FormEleven = ({ handleChange, setStep }) => {
+  return (
+    <FormControl className="form container">
+      <h3>Set Advert Life Span</h3>
+      <div className="row">
+        <div className="col-12 mb-3">Start Date & Time</div>
+        <div className="col-6">
+          <TextField
+            id="filled-select-currency"
+            label="Date"
+            variant="outlined"
+            fullWidth
+            type="date"
+            defaultValue={moment()
+              .add(1, "days")
+              .format("YYYY-MM-DD")}
+          />
+        </div>
+
+        <div className="col-6">
+          <TextField
+            id="filled-select-currency"
+            label="Time"
+            variant="outlined"
+            fullWidth
+            defaultValue="00:00"
+            type="time"
+          />
+        </div>
+
+        <div className="col-12 mb-3">End Date & Time</div>
+        <div className="col-6">
+          <TextField
+            id="filled-select-currency"
+            label="Date"
+            variant="outlined"
+            fullWidth
+            type="date"
+            defaultValue={moment()
+              .add(2, "days")
+              .format("YYYY-MM-DD")}
+          />
+        </div>
+
+        <div className="col-6">
+          <TextField
+            id="filled-select-currency"
+            label="Time"
+            variant="outlined"
+            fullWidth
+            defaultValue="00:00"
+            type="time"
+          />
+        </div>
+
+        <Buttons next={12} prev={10} setStep={setStep} />
+      </div>
+    </FormControl>
+  );
+};
+
+const FormTwelve = ({ handleChange, setStep }) => {
+  const [currency, setcurrency] = useState("Nigerian Naira (NGN)");
+  const [period, setperiod] = useState("Daily");
+  const currencies = [
+    { id: "usd", value: "United State Dollar (USD)" },
+    { id: "ngn", value: "Nigerian Naira (NGN)" },
+  ];
+
+  const periods = [
+    { id: 1, value: "Daily" },
+    { id: 2, value: "Weekly" },
+    { id: 3, value: "Monthly" },
+  ];
+
+  return (
+    <FormControl className="form container">
+      <h3>Setup Budget</h3>
+      <div className="row">
+        <div className="col-12">
+          <TextField
+            select
+            label="Select Currency"
+            variant="outlined"
+            value={currency}
+            fullWidth
+            onChange={(e) => setcurrency(e.target.value)}
+          >
+            {currencies.map((currencie) => (
+              <MenuItem key={currencie.id} value={currencie.value}>
+                {currencie.value}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
+
+        <div className="col-12">
+          <TextField
+            select
+            label="Select Period"
+            variant="outlined"
+            value={period}
+            fullWidth
+            onChange={(e) => setcurrency(e.target.value)}
+          >
+            {periods.map((data) => (
+              <MenuItem key={data.id} value={data.value}>
+                {data.value}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
+
+        <div className="col-12">
+          <TextField
+            name="amount"
+            label="Enter Amount"
+            variant="outlined"
+            size="medium"
+            fullWidth
+          />
+        </div>
+
+        <Buttons next={13} prev={11} setStep={setStep} end={true} />
+      </div>
+    </FormControl>
+  );
+};
+
+
+const Checkout = ({ handleChange, setStep }) => {
+
+  return (
+    <FormControl className="form container">
+      <h3>Let's Get Started!</h3>
+      <div className="row">
+        <div className="col-6 text-center">
+          <Card>
+            <CardContent>
+              <h6>Pay via wallet</h6>
+              <div className="cashout-icons">
+                <AccountBalanceWalletIcon />
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="col-6 text-center">
+          <Card>
+            <CardContent>
+              <h6>Pay via card</h6>
+              <CreditCardIcon />
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="col-6">
+          <Button variant="outlined" fullWidth onClick={() => setStep(12)}>
+            BACK
+          </Button>
+        </div>
       </div>
     </FormControl>
   );

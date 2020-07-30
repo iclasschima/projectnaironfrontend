@@ -78,81 +78,89 @@ class AdvertForm4 extends Component{
             onChangeData,
         }=this.props
 
-        return(
+        return (
+          <div className="">
+            {/* <AdvertNavBar /> */}
 
-
-            <div className="">
-        
-                    {/* <AdvertNavBar /> */}
-                   
-                    <div className="row">
-
-                        <div className="col">
-
-                            <div className="card advertcard">
-
-                                <div className="card-body advertcardcontent ">
-                                    
-                                    <div>
-                                        <p className="card-text advertbodytext">Where are your customers? </p>
-                                    </div>
-                                    <form>
-                                        
-                                    <div className="input-group mb-3 " id="input-group">
-                                    
-                                        <div className="input-group-prepend">
-                                            <span className="input-group-text"> <img src={location} alt="location"  id="basic-addon1"/></span>
-                                        </div>
-                                        <input type="text" className="form-control locfield" id="exampleInputEmail1" aria-describedby="basic-addon1" placeholder="Set up specific areas" />
-                                        
-                                    </div>
-                                    <p>Where do you want your ads to appear?</p>
-                                    
-
-                                    {/*<div className="">*/}
-                                    {/*  <input type="text" className="fillformlong"*/}
-                                    {/*         placeholder=" Add location (city, state or country) " onChange={onChangeData('country')} value={country}>*/}
-
-                                    {/*  </input>*/}
-                                    {/*</div>*/}
-                                    
-                                    {/*    <img src={map} alt="map"/>*/}
-
-                                        <div id='pac-container'>
-                                            <input id='pac-input' type='text' onChange={onChangeData('place_formatted')} value={place_formatted} placeholder='Add location (city, state or country)' />
-
-                                        </div>
-                                        <div id='map'>
-                                        </div>
-                                    
-                                    
-
-                                    <div className="startfloat d-flex">
-                                    <p  onClick={onNext} className="btn startbtn">Next</p><p className="press">PressEnter</p>
-                                    </div>
-                                        <div className="justify-content-end">
-                                            <div className=" arr  ">
-                                                <img onClick={onNext} className="arrnav" src={arrowUp} alt="arrow"/>
-                                            </div>
-                                            <div className=" arr  ">
-                                                <img onClick={onBack} className="arrnav" src={arrowDown} alt="arrow"/>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
+            <div className="row">
+              <div className="col">
+                <div className="card advertcard">
+                  <div className="card-body advertcardcontent ">
+                    <div>
+                      <p className="card-text advertbodytext">
+                        Where are your customers?{" "}
+                      </p>
                     </div>
-
-                    {/* <AdvertFooter /> */}
-
-                
+                    <form>
+                      <div className="input-group mb-3 " id="input-group">
+                        <div className="input-group-prepend">
+                          <span className="input-group-text">
+                            {" "}
+                            <img
+                              src={location}
+                              alt="location"
+                              id="basic-addon1"
+                            />
+                          </span>
+                        </div>
+                        <input
+                          type="text"
+                          className="form-control locfield"
+                          id="exampleInputEmail1"
+                          aria-describedby="basic-addon1"
+                          placeholder="Set up specific areas"
+                        />
+                      </div>
+                      <p>Where do you want your ads to appear?</p>
+                      {/*<div className="">*/}
+                      {/*  <input type="text" className="fillformlong"*/}
+                      {/*         placeholder=" Add location (city, state or country) " onChange={onChangeData('country')} value={country}>*/}
+                      {/*  </input>*/}
+                      {/*</div>*/}
+                      {/*    <img src={map} alt="map"/>*/}
+                      <div id="pac-container">
+                        <input
+                          id="pac-input"
+                          type="text"
+                          onChange={onChangeData("place_formatted")}
+                          value={place_formatted}
+                          placeholder="Add location (city, state or country)"
+                        />
+                      </div>
+                      <div id="map"></div>
+                      google
+                      <div className="startfloat d-flex">
+                        <p onClick={onNext} className="btn startbtn">
+                          Next
+                        </p>
+                        <p className="press">PressEnter</p>
+                      </div>
+                      <div className="justify-content-end">
+                        <div className=" arr  ">
+                          <img
+                            onClick={onNext}
+                            className="arrnav"
+                            src={arrowUp}
+                            alt="arrow"
+                          />
+                        </div>
+                        <div className=" arr  ">
+                          <img
+                            onClick={onBack}
+                            className="arrnav"
+                            src={arrowDown}
+                            alt="arrow"
+                          />
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            {/* <AdvertFooter /> */}
+          </div>
         );
     }
 }
